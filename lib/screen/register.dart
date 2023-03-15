@@ -4,16 +4,14 @@ import 'package:flutter/material.dart';
 // import 'package:resedentialapp/shared/constants.dart';
 // import 'package:resedentialapp/services/auth.dart';
 import 'package:resedentialapp/shared/loading.dart';
-import 'package:resedentialapp/shared/snackbarpage.dart';
+// import 'package:resedentialapp/shared/snackbarpage.dart';
 
 class Register extends StatefulWidget {
   final Function toggle;
-  const Register({super.key, required this.toggle});
+  const Register({Key? key, required this.toggle}) : super(key: key);
 
   @override
-  _RegisterState createState() {
-    return _RegisterState();
-  }
+  State<Register> createState() => _RegisterState();
 }
 
 class _RegisterState extends State<Register> {

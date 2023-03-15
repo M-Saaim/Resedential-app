@@ -3,6 +3,7 @@
 import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
+// import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/signin.dart';
 
 void main() async {
@@ -24,7 +25,7 @@ class MyApp extends StatelessWidget {
         late Widget currentScreen;
         switch (settings.name) {
           // case 'registration_screen':
-          //   currentScreen = const SignIn();
+          //   currentScreen = const Register(toggle: null);
           //   break;
           case 'login_screen':
             currentScreen = const LoginPage();

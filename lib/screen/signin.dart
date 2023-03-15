@@ -1,10 +1,8 @@
-// ignore_for_file: avoid_print
-
 // import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
+// import 'package:resedentialapp/screen/homepage.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
