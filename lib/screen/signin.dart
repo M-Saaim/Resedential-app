@@ -1,8 +1,10 @@
 // ignore_for_file: avoid_print
 
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/loginpage.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -14,7 +16,7 @@ class SignIn extends StatefulWidget {
 class _SignInState extends State<SignIn> {
   String? email;
   String? password;
-  final _auth = FirebaseAuth.instance;
+  // final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -60,7 +62,10 @@ class _SignInState extends State<SignIn> {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushNamed(context, "login_screen");
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const LoginPage()));
                     },
                     child: Text(
                       "Login",
@@ -155,27 +160,30 @@ class _SignInState extends State<SignIn> {
             ),
             ElevatedButton(
               onPressed: () async {
-                try {
-                  final newUser = await _auth.createUserWithEmailAndPassword(
-                      email: email!, password: password!);
-                  // ignore: use_build_context_synchronously
-                  Navigator.pushReplacementNamed(context, 'home_screen');
-                } catch (e) {
-                  var error = e.toString().split(']');
-                  ScaffoldMessenger.of(context).showSnackBar(
-                    SnackBar(
-                      behavior: SnackBarBehavior.floating,
-                      backgroundColor: Colors.red,
-                      content: Container(
-                        decoration: const BoxDecoration(
-                          color: Colors.red,
-                        ),
-                        child: Text(error[1]),
-                      ),
-                    ),
-                  );
-                  print(e);
-                }
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const LoginPage()));
+
+                // try {
+                //   final newUser = await _auth.createUserWithEmailAndPassword(
+                //       email: email!, password: password!);
+                //   // ignore: use_build_context_synchronously
+                //   Navigator.pushReplacementNamed(context, 'home_screen');
+                // } catch (e) {
+                //   var error = e.toString().split(']');
+                //   ScaffoldMessenger.of(context).showSnackBar(
+                //     SnackBar(
+                //       behavior: SnackBarBehavior.floating,
+                //       backgroundColor: Colors.red,
+                //       content: Container(
+                //         decoration: const BoxDecoration(
+                //           color: Colors.red,
+                //         ),
+                //         child: Text(error[1]),
+                //       ),
+                //     ),
+                //   );
+                //   print(e);
+                // }
               },
               style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(

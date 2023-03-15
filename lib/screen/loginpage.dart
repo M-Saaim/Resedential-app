@@ -1,6 +1,8 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/signin.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -10,7 +12,7 @@ class LoginPage extends StatefulWidget {
 }
 
 class _LoginPageState extends State<LoginPage> {
-  final _auth = FirebaseAuth.instance;
+  // final _auth = FirebaseAuth.instance;
 
   late String email;
   late String password;
@@ -21,7 +23,7 @@ class _LoginPageState extends State<LoginPage> {
       body: SingleChildScrollView(
         scrollDirection: Axis.vertical,
         child: SafeArea(
-          child: Container(
+          child: SizedBox(
             height: MediaQuery.of(context).size.height,
             width: MediaQuery.of(context).size.width,
             child: Column(
@@ -30,7 +32,7 @@ class _LoginPageState extends State<LoginPage> {
                   padding:
                       const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
                   child: SizedBox(
-                    height: 250,
+                    height: 150,
                     width: MediaQuery.of(context).size.width,
                     //color: Colors.red[50],
                     child: const CustomPaint(
@@ -77,8 +79,10 @@ class _LoginPageState extends State<LoginPage> {
                           ),
                           TextButton(
                               onPressed: () {
-                                Navigator.pushReplacementNamed(
-                                    context, "registration_screen");
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => const SignIn()));
                               },
                               child: Text(
                                 "Create New",
@@ -102,16 +106,17 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hoverColor: Colors.deepPurple.shade400,
+                            hoverColor:
+                                const Color.fromRGBO(97, 167, 238, 0.684),
                             fillColor: Colors.black12,
                             filled: true,
 
-                            // enabledBorder: OutlineInputBorder(
-                            //     borderSide: BorderSide(
-                            //       color: Colors.grey,
-                            //       width: 2.0,
-                            //     ),
-                            //     borderRadius: BorderRadius.circular(9)),
+                            enabledBorder: OutlineInputBorder(
+                                borderSide: const BorderSide(
+                                  color: Colors.grey,
+                                  width: 2.0,
+                                ),
+                                borderRadius: BorderRadius.circular(9)),
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Colors.deepPurple.shade400,
@@ -120,9 +125,9 @@ class _LoginPageState extends State<LoginPage> {
                                 borderRadius: BorderRadius.circular(9)),
                             hintText: 'Email',
                             alignLabelWithHint: true,
-                            label: Icon(
+                            label: const Icon(
                               Icons.mail,
-                              color: Colors.deepPurple.shade400,
+                              color: Color.fromARGB(255, 170, 0, 0),
                             ),
                             // labelText: "Email"
                           )),
@@ -138,77 +143,82 @@ class _LoginPageState extends State<LoginPage> {
                           },
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            fillColor: Colors.black12, filled: true,
-                            hoverColor: Colors.deepPurple.shade400,
-                            // enabledBorder: OutlineInputBorder(
-                            //   borderSide: BorderSide(
-                            //     color: Colors.grey,
-                            //     width: 2.0,
-                            //   ),
-                            //   borderRadius: BorderRadius.circular(9),
-                            // ),
+                            fillColor: Colors.black12,
+                            filled: true,
+                            hoverColor:
+                                const Color.fromRGBO(97, 167, 238, 0.684),
+                            enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9),
+                            ),
                             focusedBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Colors.deepPurple.shade400,
                                   width: 2.0,
                                 ),
                                 borderRadius: BorderRadius.circular(9)),
-                            label: Icon(
+                            label: const Icon(
                               Icons.password_sharp,
-                              color: Colors.deepPurple.shade400,
+                              color: Color.fromARGB(255, 170, 0, 0),
                             ),
                             hintText: 'Password',
                           )),
                       const SizedBox(
                         height: 24.0,
                       ),
-                      ElevatedButton(
-                        onPressed: () async {
-                          try {
-                            final user = await _auth.signInWithEmailAndPassword(
-                                email: email, password: password);
-                            // ignore: use_build_context_synchronously
-                            Navigator.pushReplacementNamed(
-                                context, 'home_screen');
-                          } catch (e) {
-                            var error = e.toString().split(']');
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                behavior: SnackBarBehavior.floating,
-                                backgroundColor: Colors.red,
-                                content: Container(
-                                  decoration: const BoxDecoration(
-                                    color: Colors.red,
-                                  ),
-                                  child: Text(error[1]),
-                                ),
-                              ),
-                            );
-                            print(error[1]);
-                          }
-                        },
-                        style: ElevatedButton.styleFrom(
-                            padding: const EdgeInsets.symmetric(
-                                horizontal: 20.0, vertical: 15.0),
-                            backgroundColor: Colors.deepPurple.shade400,
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(5.0))),
-                        child: Text(
-                          "Login",
-                          style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  fontWeight: FontWeight.w800)),
-                        ),
-                      ),
+                      // ElevatedButton(
+                      //   onPressed: () async {
+                      //     try {
+                      //       final user = await _auth.signInWithEmailAndPassword(
+                      //           email: email, password: password);
+                      //       // ignore: use_build_context_synchronously
+                      //       Navigator.pushReplacementNamed(
+                      //           context, 'home_screen');
+                      //     } catch (e) {
+                      //       var error = e.toString().split(']');
+                      //       ScaffoldMessenger.of(context).showSnackBar(
+                      //         SnackBar(
+                      //           behavior: SnackBarBehavior.floating,
+                      //           backgroundColor: Colors.red,
+                      //           content: Container(
+                      //             decoration: const BoxDecoration(
+                      //               color: Colors.red,
+                      //             ),
+                      //             child: Text(error[1]),
+                      //           ),
+                      //         ),
+                      //       );
+                      //       print(error[1]);
+                      //     }
+                      //   },
+                      //   style: ElevatedButton.styleFrom(
+                      //       padding: const EdgeInsets.symmetric(
+                      //           horizontal: 20.0, vertical: 15.0),
+                      //       backgroundColor: Colors.deepPurple.shade400,
+                      //       shape: RoundedRectangleBorder(
+                      //           borderRadius: BorderRadius.circular(5.0))),
+                      //   child: Text(
+                      //     "Login",
+                      //     style: GoogleFonts.roboto(
+                      //         textStyle: const TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 20,
+                      //             fontWeight: FontWeight.w800)),
+                      //   ),
+                      // ),
                       // ignore: prefer_const_constructors
                       SizedBox(
                         height: 10,
                       ),
                       TextButton(
                           onPressed: () {
-                            Navigator.pushNamed(context, "registration_screen");
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const HomePAge()));
                           },
                           child: const Text("register"))
                     ],
@@ -254,9 +264,4 @@ class CurvedPainter extends CustomPainter {
 
   @override
   bool shouldRepaint(CustomPainter oldDelegate) => true;
-}
-
-@override
-bool shouldRepaint(CustomPainter oldDelegate) {
-  return true;
 }
