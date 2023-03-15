@@ -5,11 +5,10 @@ import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/signin.dart';
 
 void main() async {
-//   WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp();
-
-// // Ideal time to initialize
-//   await FirebaseAuth.instance.useAuthEmulator('localhost', 50689);
+// WidgetsFlutterBinding.ensureInitialized();
+//   await Firebase.initializeApp(
+//     options: DefaultFirebaseOptions.currentPlatform,
+//   );
 
   runApp(const MaterialApp(home: MyApp()));
 }

@@ -153,7 +153,7 @@ class _SignInState extends State<SignIn> {
             ),
             ElevatedButton(
               onPressed: () async {
-                Navigator.pushReplacementNamed(context, 'home_screen');
+                Navigator.pushReplacementNamed(context, 'register_screen');
                 // try {
                 //   // final newUser = await _auth.createUserWithEmailAndPassword(
                 //       email: email, password: password);
