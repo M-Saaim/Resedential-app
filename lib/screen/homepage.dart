@@ -73,6 +73,34 @@ class _HomePAgeState extends State<HomePAge> {
                 ],
                 [
                   GridButtonItem(
+                    title: "Black",
+                    color: Colors.black,
+                    textStyle: textStyle.copyWith(color: Colors.white),
+                    borderRadius: 30,
+                  ),
+                  GridButtonItem(
+                    title: "Red",
+                    color: Colors.red,
+                    textStyle: textStyle.copyWith(color: Colors.white),
+                    borderRadius: 30,
+                  ),
+                ],
+                [
+                  GridButtonItem(
+                    title: "Black",
+                    color: Colors.black,
+                    textStyle: textStyle.copyWith(color: Colors.white),
+                    borderRadius: 30,
+                  ),
+                  GridButtonItem(
+                    title: "Red",
+                    color: Colors.red,
+                    textStyle: textStyle.copyWith(color: Colors.white),
+                    borderRadius: 30,
+                  ),
+                ],
+                [
+                  GridButtonItem(
                       child: const Icon(
                         Icons.image,
                         size: 50,
@@ -88,46 +116,6 @@ class _HomePAgeState extends State<HomePAge> {
           );
         }),
       ),
-      // body: Center(
-      //     child: GridView.extent(
-      //   primary: false,
-      //   padding: const EdgeInsets.all(16),
-      //   crossAxisSpacing: 10,
-      //   mainAxisSpacing: 10,
-      //   maxCrossAxisExtent: 200.0,
-      //   children: <Widget>[
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: Colors.blue,
-      //       child: const Text('First', style: TextStyle(fontSize: 20)),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: const Color.fromARGB(255, 33, 243, 117),
-      //       child: const Text('Second', style: TextStyle(fontSize: 20)),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: Colors.blue,
-      //       child: const Text('Third', style: TextStyle(fontSize: 20)),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: const Color.fromARGB(255, 33, 243, 117),
-      //       child: const Text('Four', style: TextStyle(fontSize: 20)),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: Colors.blue,
-      //       child: const Text('Fifth', style: TextStyle(fontSize: 20)),
-      //     ),
-      //     Container(
-      //       padding: const EdgeInsets.all(8),
-      //       color: const Color.fromARGB(255, 33, 243, 117),
-      //       child: const Text('Six', style: TextStyle(fontSize: 20)),
-      //     ),
-      //   ],
-      // )),
       // body: GridView.count(
       //   // Create a grid with 2 columns. If you change the scrollDirection to
       //   // horizontal, this produces 2 rows.
