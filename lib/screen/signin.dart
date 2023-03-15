@@ -1,4 +1,6 @@
-// import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: avoid_print
+
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 
@@ -10,9 +12,9 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  late String email;
-  // final _auth = FirebaseAuth.instance;
-  late String password;
+  String? email;
+  String? password;
+  final _auth = FirebaseAuth.instance;
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +60,7 @@ class _SignInState extends State<SignIn> {
                 ),
                 TextButton(
                     onPressed: () {
-                      Navigator.pushReplacementNamed(context, "login_screen");
+                      Navigator.pushNamed(context, "login_screen");
                     },
                     child: Text(
                       "Login",
@@ -153,27 +155,27 @@ class _SignInState extends State<SignIn> {
             ),
             ElevatedButton(
               onPressed: () async {
-                Navigator.pushReplacementNamed(context, 'register_screen');
-                // try {
-                //   // final newUser = await _auth.createUserWithEmailAndPassword(
-                //       email: email, password: password);
-                //   // Navigator.pushReplacementNamed(context, 'home_screen');
-                // } catch (e) {
-                //   var error = e.toString().split(']');
-                //   ScaffoldMessenger.of(context).showSnackBar(
-                //     SnackBar(
-                //       behavior: SnackBarBehavior.floating,
-                //       backgroundColor: Colors.red,
-                //       content: Container(
-                //         decoration: BoxDecoration(
-                //           color: Colors.red,
-                //         ),
-                //         child: Text(error[1]),
-                //       ),
-                //     ),
-                //   );
-                //   print(e);
-                // }
+                try {
+                  final newUser = await _auth.createUserWithEmailAndPassword(
+                      email: email!, password: password!);
+                  // ignore: use_build_context_synchronously
+                  Navigator.pushReplacementNamed(context, 'home_screen');
+                } catch (e) {
+                  var error = e.toString().split(']');
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(
+                      behavior: SnackBarBehavior.floating,
+                      backgroundColor: Colors.red,
+                      content: Container(
+                        decoration: const BoxDecoration(
+                          color: Colors.red,
+                        ),
+                        child: Text(error[1]),
+                      ),
+                    ),
+                  );
+                  print(e);
+                }
               },
               style: ElevatedButton.styleFrom(
                   padding: const EdgeInsets.symmetric(

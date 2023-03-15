@@ -1,16 +1,15 @@
-// import 'package:firebase_auth/firebase_auth.dart';
-// import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/signin.dart';
 
 void main() async {
-// WidgetsFlutterBinding.ensureInitialized();
-//   await Firebase.initializeApp(
-//     options: DefaultFirebaseOptions.currentPlatform,
-//   );
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
 
-  runApp(const MaterialApp(home: MyApp()));
+  runApp(const MaterialApp(home: SignIn()));
 }
 
 class MyApp extends StatelessWidget {
@@ -24,12 +23,12 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         late Widget currentScreen;
         switch (settings.name) {
-          case 'registration_screen':
-            currentScreen = const SignIn();
-            break;
-          // case 'login_screen':
-          //   currentScreen = LoginPage();
+          // case 'registration_screen':
+          //   currentScreen = const SignIn();
           //   break;
+          case 'login_screen':
+            currentScreen = const LoginPage();
+            break;
           case 'home_screen':
             currentScreen = const HomePAge();
             break;

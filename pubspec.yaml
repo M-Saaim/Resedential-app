@@ -36,6 +36,9 @@ dependencies:
   firebase_auth: ^4.2.10
   flutter_grid_button:
   flutter_spinkit: ^5.1.0
+  connectivity: ^3.0.6
+  cloud_firestore: ^4.4.4
+  firebase_storage: ^11.0.15
   
 
 dev_dependencies:
