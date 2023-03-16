@@ -164,7 +164,6 @@ class _SignInState extends State<SignIn> {
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email!, password: password!);
-                  // ignore: use_build_context_synchronously
                   Navigator.pushReplacementNamed(context, 'home_screen');
                 } catch (e) {
                   var error = e.toString().split(']');
