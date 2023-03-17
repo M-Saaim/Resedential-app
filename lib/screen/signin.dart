@@ -1,6 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 // import 'package:resedentialapp/screen/homepage.dart';
 
@@ -12,8 +13,8 @@ class SignIn extends StatefulWidget {
 }
 
 class _SignInState extends State<SignIn> {
-  String? email;
-  String? password;
+  late String email;
+  late String password;
   final _auth = FirebaseAuth.instance;
 
   @override
@@ -163,8 +164,11 @@ class _SignInState extends State<SignIn> {
 
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
-                      email: email!, password: password!);
-                  Navigator.pushReplacementNamed(context, 'home_screen');
+                      email: email, password: password);
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const HomePAge()));
                 } catch (e) {
                   var error = e.toString().split(']');
                   ScaffoldMessenger.of(context).showSnackBar(
@@ -175,7 +179,7 @@ class _SignInState extends State<SignIn> {
                         decoration: const BoxDecoration(
                           color: Colors.red,
                         ),
-                        child: Text(error[1]),
+                        child: Text(e.toString()),
                       ),
                     ),
                   );

@@ -10,7 +10,7 @@ void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
 
-  runApp(const MaterialApp(home: SignIn()));
+  runApp(const MaterialApp(home: LoginPage()));
 }
 
 class MyApp extends StatelessWidget {
