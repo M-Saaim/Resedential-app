@@ -211,23 +211,6 @@ class _LoginPageState extends State<LoginPage> {
                                   fontWeight: FontWeight.w800)),
                         ),
                       ),
-                      // ignore: prefer_const_constructors
-                      // SizedBox(
-                      //   height: 10,
-                      // ),
-                      // TextButton(
-                      //     onPressed: () {
-                      //       Navigator.push(
-                      //           context,
-                      //           MaterialPageRoute(
-                      //               builder: (context) => const HomePAge()));
-                      //     },
-                      //     child: const Text("Log In",
-                      //         style: TextStyle(
-                      //           color: Color.fromARGB(255, 190, 0, 0),
-                      //           fontSize: 20,
-                      //           fontWeight: FontWeight.w800,
-                      //         ))),
                     ],
                   ),
                 ),
