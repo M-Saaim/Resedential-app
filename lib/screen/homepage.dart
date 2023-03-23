@@ -20,21 +20,6 @@ class _HomePAgeState extends State<HomePAge> {
     const title = 'Home Page';
 
     return MaterialApp(
-      // theme: ThemeData(
-      //   colorScheme: const ColorScheme(
-      //     brightness: Brightness.light,
-      //     primary: Color.fromARGB(255, 200, 0, 0),
-      //     onPrimary: Color.fromARGB(255, 255, 255, 255),
-      //     secondary: Colors.grey,
-      //     onSecondary: Colors.grey,
-      //     background: Colors.grey,
-      //     onBackground: Colors.grey,
-      //     surface: Colors.grey,
-      //     onSurface: Colors.grey,
-      //     error: Colors.grey,
-      //     onError: Colors.grey,
-      //   ),
-      // ),
       title: title,
       home: Scaffold(
         appBar: AppBar(
