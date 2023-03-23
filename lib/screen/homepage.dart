@@ -23,10 +23,42 @@ class _HomePAgeState extends State<HomePAge> {
       title: title,
       home: Scaffold(
         appBar: AppBar(
-          title: const Text(title),
+          title: const Text("Residential Mgnt."),
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
         ),
         body: Builder(builder: (context) {
+          // ElevatedButton(
+          //   onPressed: () {},
+          //   child: Row(
+          //     mainAxisSize: MainAxisSize.min,
+          //     children: [
+          //       const Text('Download'), // <-- Text
+          //       const SizedBox(
+          //         width: 5,
+          //       ),
+          //       const Icon(
+          //         // <-- Icon
+          //         Icons.download,
+          //         size: 24.0,
+          //       ),
+          //     ],
+          //   ),
+          // );
+          // Column(children: [
+          //   const SizedBox(
+          //     height: 50,
+          //   ),
+          //   ElevatedButton.icon(
+          //     // <-- ElevatedButton
+          //     onPressed: () {},
+          //     icon: const Icon(
+          //       Icons.person,
+          //       size: 24.0,
+          //     ),
+          //     label: const Text('Profile'),
+          //   ),
+          // ]);
+
           return Padding(
             padding: const EdgeInsets.all(18.0),
             child: GridButton(
@@ -44,42 +76,42 @@ class _HomePAgeState extends State<HomePAge> {
               items: [
                 [
                   GridButtonItem(
-                    title: "Black",
-                    color: Colors.black,
+                    title: "Profile",
+                    color: const Color.fromARGB(255, 170, 0, 0),
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
                   GridButtonItem(
-                    title: "Red",
-                    color: Colors.red,
+                    title: "Voting",
+                    color: Colors.black,
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
                 ],
                 [
                   GridButtonItem(
-                    title: "Black",
+                    title: "Complaints",
                     color: Colors.black,
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
                   GridButtonItem(
-                    title: "Red",
-                    color: Colors.red,
+                    title: "Notice",
+                    color: const Color.fromARGB(255, 170, 0, 0),
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
                 ],
                 [
                   GridButtonItem(
-                    title: "Black",
-                    color: Colors.black,
+                    title: "Visitors",
+                    color: const Color.fromARGB(255, 170, 0, 0),
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
                   GridButtonItem(
-                    title: "Red",
-                    color: Colors.red,
+                    title: "Log out",
+                    color: Colors.black,
                     textStyle: textStyle.copyWith(color: Colors.white),
                     borderRadius: 30,
                   ),
