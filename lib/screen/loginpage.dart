@@ -47,7 +47,7 @@ class _LoginPageState extends State<LoginPage> {
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
-                      Text("Hey,",
+                      Text("Welcome,",
                           style: GoogleFonts.nunitoSans(
                               textStyle: const TextStyle(
                             color: Colors.black,
@@ -85,7 +85,7 @@ class _LoginPageState extends State<LoginPage> {
                                         builder: (context) => const SignIn()));
                               },
                               child: Text(
-                                "Create New",
+                                "Create Account",
                                 style: GoogleFonts.roboto(
                                     textStyle: TextStyle(
                                         color: Colors.deepPurple.shade400,
