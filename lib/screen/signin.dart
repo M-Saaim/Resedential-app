@@ -1,9 +1,11 @@
-import 'package:firebase_auth/firebase_auth.dart';
+// ignore_for_file: unused_import
+
 import 'package:flutter/material.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
-// import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/register.dart';
 
 class SignIn extends StatefulWidget {
   const SignIn({Key? key}) : super(key: key);
@@ -165,10 +167,9 @@ class _SignInState extends State<SignIn> {
                 try {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const HomePAge()));
+                  // ignore: use_build_context_synchronously
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => Register()));
                 } catch (e) {
                   var error = e.toString().split(']');
                   ScaffoldMessenger.of(context).showSnackBar(

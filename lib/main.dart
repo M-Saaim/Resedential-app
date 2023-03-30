@@ -1,10 +1,12 @@
+// ignore_for_file: unused_import
+
+import 'package:flutter/material.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
-// import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/signin.dart';
+import 'package:resedentialapp/screen/register.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
