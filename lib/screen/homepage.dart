@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
+import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/signin.dart';
 
 class HomePAge extends StatefulWidget {
@@ -25,6 +26,7 @@ class _HomePAgeState extends State<HomePAge> {
         appBar: AppBar(
           title: const Text("Residential Mgnt."),
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
+          centerTitle: true,
         ),
         body: Builder(builder: (context) {
           return Padding(
@@ -40,18 +42,26 @@ class _HomePAgeState extends State<HomePAge> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          onTap: () => {print("hii")},
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Register()))
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
+                            // child:const Text("Profile"),
+                            child: const Icon(
+                              Icons.person,
+                              color: Colors.white,
+                              size: 65,
+                            ),
                           ),
                         ),
-                        // SizedBox(
-                        //   width: MediaQuery.of(context).size.width * 0.055,
-                        // ),
                         GestureDetector(
                           onTap: () => {print("hii")},
                           child: Container(
@@ -60,6 +70,11 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
+                            child: const Icon(
+                              Icons.poll_rounded,
+                              color: Colors.white,
+                              size: 65,
+                            ),
                           ),
                         ),
                       ],
@@ -75,11 +90,13 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
+                            child: const Icon(
+                              Icons.event_note_outlined,
+                              color: Colors.white,
+                              size: 65,
+                            ),
                           ),
                         ),
-                        // SizedBox(
-                        //   width: MediaQuery.of(context).size.width * 0.055,
-                        // ),
                         GestureDetector(
                           onTap: () => {print("hii")},
                           child: Container(
@@ -88,6 +105,11 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
+                            child: const Icon(
+                              Icons.insert_comment_rounded,
+                              color: Colors.white,
+                              size: 65,
+                            ),
                           ),
                         ),
                       ],
@@ -103,11 +125,13 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
+                            child: const Icon(
+                              Icons.people_alt_outlined,
+                              color: Colors.white,
+                              size: 65,
+                            ),
                           ),
                         ),
-                        // SizedBox(
-                        //   width: MediaQuery.of(context).size.width * 0.055,
-                        // ),
                         GestureDetector(
                           onTap: () => {
                             Navigator.push(
