@@ -70,7 +70,7 @@ class _RegisterState extends State<Register> {
                     child: Column(
                       children: [
                         TextField(
-                            keyboardType: TextInputType.emailAddress,
+                            keyboardType: TextInputType.name,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
                               name = value;
@@ -140,7 +140,7 @@ class _RegisterState extends State<Register> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         TextField(
-                            keyboardType: TextInputType.emailAddress,
+                            keyboardType: TextInputType.phone,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
                               phone = value;
@@ -175,7 +175,7 @@ class _RegisterState extends State<Register> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         TextField(
-                            keyboardType: TextInputType.emailAddress,
+                            keyboardType: TextInputType.streetAddress,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
                               house = value;
@@ -214,7 +214,7 @@ class _RegisterState extends State<Register> {
                             keyboardType: TextInputType.emailAddress,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
-                              email = value;
+                              address = value;
                               //Do something with the user input.
                             },
                             decoration: InputDecoration(
@@ -235,10 +235,10 @@ class _RegisterState extends State<Register> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Email',
+                              hintText: 'Address',
                               alignLabelWithHint: true,
                               label: const Icon(
-                                Icons.mail,
+                                Icons.home_filled,
                                 color: Color.fromARGB(255, 170, 0, 0),
                               ),
                               // labelText: "Email"
