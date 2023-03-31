@@ -55,10 +55,27 @@ class _HomePAgeState extends State<HomePAge> {
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             // child:const Text("Profile"),
-                            child: const Icon(
-                              Icons.person,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.person,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Profile",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -70,10 +87,27 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
-                            child: const Icon(
-                              Icons.poll_rounded,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.poll_rounded,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Voting",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -90,10 +124,27 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
-                            child: const Icon(
-                              Icons.event_note_outlined,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.event_note_outlined,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Notice",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -105,10 +156,27 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
-                            child: const Icon(
-                              Icons.insert_comment_rounded,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.insert_comment_rounded,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Complaints",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -125,10 +193,27 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
-                            child: const Icon(
-                              Icons.people_alt_outlined,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.people_alt_outlined,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Visitors",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
@@ -145,10 +230,27 @@ class _HomePAgeState extends State<HomePAge> {
                                 borderRadius: BorderRadius.circular(15)),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
-                            child: const Icon(
-                              Icons.logout,
-                              color: Colors.white,
-                              size: 65,
+                            child: Column(
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              crossAxisAlignment: CrossAxisAlignment.center,
+                              children: [
+                                const Icon(
+                                  Icons.logout,
+                                  color: Colors.white,
+                                  size: 65,
+                                ),
+                                SizedBox(
+                                  height: MediaQuery.of(context).size.height *
+                                      0.005,
+                                ),
+                                Text(
+                                  "Logout",
+                                  style: TextStyle(
+                                      color: Colors.amber.shade50,
+                                      fontSize: 20,
+                                      fontWeight: FontWeight.bold),
+                                )
+                              ],
                             ),
                           ),
                         ),
