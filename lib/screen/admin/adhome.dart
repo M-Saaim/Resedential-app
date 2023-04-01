@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/admin/adcomplaints.dart';
 import 'package:resedentialapp/screen/admin/adnotice.dart';
+import 'package:resedentialapp/screen/admin/advisitors.dart';
 import 'package:resedentialapp/screen/admin/advoting.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/profile.dart';
-import 'package:resedentialapp/screen/visitors.dart';
 
 class Adhome extends StatefulWidget {
   const Adhome({Key? key}) : super(key: key);
@@ -206,7 +206,7 @@ class _AdhomeState extends State<Adhome> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Visitors()))
+                                    builder: (context) => const Advisitors()))
                           },
                           child: Container(
                             decoration: BoxDecoration(
