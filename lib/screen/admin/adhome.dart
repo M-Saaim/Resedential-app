@@ -25,7 +25,7 @@ class _AdhomeState extends State<Adhome> {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
-          title: const Text("Residential Mgnt."),
+          title: const Text("Admin-Residential Mgnt."),
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
           centerTitle: true,
         ),
