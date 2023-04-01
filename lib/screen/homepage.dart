@@ -8,6 +8,7 @@ import 'package:resedentialapp/screen/notice.dart';
 import 'package:resedentialapp/screen/profile.dart';
 import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/visitors.dart';
+import 'package:resedentialapp/screen/voting.dart';
 
 class HomePAge extends StatefulWidget {
   const HomePAge({Key? key}) : super(key: key);
@@ -84,7 +85,12 @@ class _HomePAgeState extends State<HomePAge> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () => {print('Hii')},
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Voting()))
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,

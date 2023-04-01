@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
+import 'package:resedentialapp/screen/admin/addvoter.dart';
 import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
@@ -56,7 +57,8 @@ class _AdvotingState extends State<Advoting> {
                 color: Colors.white,
               ),
               onPressed: () {
-                print('Hi There');
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Addvoter()));
               }),
         ),
       ),
