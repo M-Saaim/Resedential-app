@@ -84,12 +84,7 @@ class _HomePAgeState extends State<HomePAge> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () => {
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const Advoting()))
-                          },
+                          onTap: () => {print('Hii')},
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,

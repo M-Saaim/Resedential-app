@@ -35,15 +35,32 @@ class _AdnoticeState extends State<Adnotice> {
               backgroundColor: const Color.fromARGB(255, 170, 37, 0),
               centerTitle: true,
             ),
-            body: Builder(builder: (context) {
-              return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                  child: Container(
-                    height: MediaQuery.of(context).size.height,
-                    width: MediaQuery.of(context).size.width,
-                    color: Colors.white,
-                  ));
-            })));
+            body: Container(
+              alignment: Alignment.bottomCenter,
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(width: 6),
+                  color: const Color.fromARGB(
+                    255,
+                    170,
+                    37,
+                    0,
+                  ),
+                  shape: BoxShape.circle,
+                ),
+                child: IconButton(
+                    // style: const ButtonStyle(backgroundColor: Colors.purple),
+                    iconSize: 50,
+                    // color: Colors.blue,
+                    highlightColor: Colors.black,
+                    icon: const Icon(
+                      Icons.add_box_outlined,
+                      color: Colors.white,
+                    ),
+                    onPressed: () {
+                      print('Hi There');
+                    }),
+              ),
+            )));
   }
 }
