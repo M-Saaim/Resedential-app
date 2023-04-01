@@ -26,9 +26,9 @@ class MyApp extends StatelessWidget {
       onGenerateRoute: (settings) {
         late Widget currentScreen;
         switch (settings.name) {
-          // case 'registration_screen':
-          //   currentScreen = const Register(toggle: null);
-          //   break;
+          case 'registration_screen':
+            currentScreen = const Register();
+            break;
           case 'login_screen':
             currentScreen = const LoginPage();
             break;
@@ -47,3 +47,12 @@ class MyApp extends StatelessWidget {
     );
   }
 }
+/*
+Admin :
+email: admin@gmail.com
+password: 123456
+
+Sam:
+email: sam@gmail.com
+password: 1234567890
+*/

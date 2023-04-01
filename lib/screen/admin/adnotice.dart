@@ -31,7 +31,7 @@ class _AdnoticeState extends State<Adnotice> {
                             builder: (context) => const Adhome()));
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
-              title: const Text("Notice"),
+              title: const Text("Admin-Notice"),
               backgroundColor: const Color.fromARGB(255, 170, 37, 0),
               centerTitle: true,
             ),

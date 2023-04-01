@@ -29,7 +29,7 @@ class _AdcomplaintsState extends State<Adcomplaints> {
                   MaterialPageRoute(builder: (context) => const Adhome()));
             },
             icon: const Icon(Icons.arrow_back_rounded)),
-        title: const Text("Complaints"),
+        title: const Text("Admin-Complaints"),
         backgroundColor: const Color.fromARGB(255, 170, 37, 0),
         centerTitle: true,
       ),

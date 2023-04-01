@@ -29,7 +29,7 @@ class _AdvotingState extends State<Advoting> {
                   MaterialPageRoute(builder: (context) => const Adhome()));
             },
             icon: const Icon(Icons.arrow_back_rounded)),
-        title: const Text("Voting"),
+        title: const Text("Admin-Voting"),
         backgroundColor: const Color.fromARGB(255, 170, 37, 0),
         centerTitle: true,
       ),

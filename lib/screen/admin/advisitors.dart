@@ -31,7 +31,7 @@ class _AdvisitorsState extends State<Advisitors> {
                             builder: (context) => const Adhome()));
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
-              title: const Text("Admin-Notice"),
+              title: const Text("Admin-Visitors"),
               backgroundColor: const Color.fromARGB(255, 170, 37, 0),
               centerTitle: true,
             ),
