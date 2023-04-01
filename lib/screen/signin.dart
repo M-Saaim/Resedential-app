@@ -143,13 +143,6 @@ class _SignInState extends State<SignIn> {
                       borderRadius: BorderRadius.circular(9)),
                   hintText: 'Password',
                   alignLabelWithHint: true,
-                  // labelText: "Password",
-                  // labelStyle: TextStyle(
-                  //   color: Colors.deepPurple.shade400,
-                  //   fontWeight: FontWeight.bold,
-                  //   fontSize: 20,
-                  //   letterSpacing: 1.9,
-                  // )
                   label: const Icon(
                     Icons.password,
                     color: Color.fromARGB(255, 170, 0, 0),

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
@@ -171,29 +172,58 @@ class _LoginPageState extends State<LoginPage> {
                       ),
                       ElevatedButton(
                         onPressed: () async {
-                          try {
-                            final user = await _auth.signInWithEmailAndPassword(
-                                email: email, password: password);
-                            // ignore: use_build_context_synchronously
-                            Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                    builder: (context) => const HomePAge()));
-                          } catch (e) {
-                            var error = e.toString().split(']');
-                            ScaffoldMessenger.of(context).showSnackBar(
-                              SnackBar(
-                                behavior: SnackBarBehavior.floating,
-                                backgroundColor: Colors.red,
-                                content: Container(
-                                  decoration: const BoxDecoration(
-                                    color: Colors.red,
+                          if (email == 'admin@gmail.com') {
+                            try {
+                              final user =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              // ignore: use_build_context_synchronously
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const Adhome()));
+                            } catch (e) {
+                              var error = e.toString().split(']');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: Colors.red,
+                                  content: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Colors.red,
+                                    ),
+                                    child: Text(e.toString()),
                                   ),
-                                  child: Text(e.toString()),
                                 ),
-                              ),
-                            );
-                            print(e);
+                              );
+                              print(e);
+                            }
+                          } else {
+                            try {
+                              final user =
+                                  await _auth.signInWithEmailAndPassword(
+                                      email: email, password: password);
+                              // ignore: use_build_context_synchronously
+                              Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                      builder: (context) => const HomePAge()));
+                            } catch (e) {
+                              var error = e.toString().split(']');
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                SnackBar(
+                                  behavior: SnackBarBehavior.floating,
+                                  backgroundColor: Colors.red,
+                                  content: Container(
+                                    decoration: const BoxDecoration(
+                                      color: Colors.red,
+                                    ),
+                                    child: Text(e.toString()),
+                                  ),
+                                ),
+                              );
+                              print(e);
+                            }
                           }
                         },
                         style: ElevatedButton.styleFrom(
