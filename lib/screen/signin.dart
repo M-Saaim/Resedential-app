@@ -168,8 +168,10 @@ class _SignInState extends State<SignIn> {
                   final newUser = await _auth.createUserWithEmailAndPassword(
                       email: email, password: password);
                   // ignore: use_build_context_synchronously
-                  Navigator.push(context,
-                      MaterialPageRoute(builder: (context) => Register()));
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const Register()));
                 } catch (e) {
                   var error = e.toString().split(']');
                   ScaffoldMessenger.of(context).showSnackBar(
