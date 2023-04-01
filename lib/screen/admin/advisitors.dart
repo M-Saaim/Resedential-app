@@ -2,7 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/admin/adhome.dart';
 
 class Advisitors extends StatefulWidget {
   const Advisitors({Key? key}) : super(key: key);
@@ -28,7 +28,7 @@ class _AdvisitorsState extends State<Advisitors> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePAge()));
+                            builder: (context) => const Adhome()));
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
               title: const Text("Admin-Notice"),

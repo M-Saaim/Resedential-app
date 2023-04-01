@@ -1,7 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:flutter/material.dart';
-import 'package:resedentialapp/screen/homepage.dart';
+import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
 class Adcomplaints extends StatefulWidget {
@@ -26,7 +26,7 @@ class _AdcomplaintsState extends State<Adcomplaints> {
         leading: IconButton(
             onPressed: () {
               Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => const HomePAge()));
+                  MaterialPageRoute(builder: (context) => const Adhome()));
             },
             icon: const Icon(Icons.arrow_back_rounded)),
         title: const Text("Complaints"),
