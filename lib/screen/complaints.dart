@@ -1,3 +1,4 @@
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
@@ -12,6 +13,17 @@ class Complaints extends StatefulWidget {
 
 class _ComplaintsState extends State<Complaints> {
   late String complt;
+  late String userid;
+
+  @override
+  void initState() {
+    final auth = FirebaseAuth.instance;
+    dynamic user = auth.currentUser;
+
+    userid = user.uid;
+
+    super.initState();
+  }
 
   get textStyle => const TextStyle(
         color: Colors.black,
@@ -85,7 +97,8 @@ class _ComplaintsState extends State<Complaints> {
                       ElevatedButton(
                         onPressed: () async {
                           Map<String, String> datatoSave = {
-                            'complaint': complt
+                            'complaint': complt,
+                            'user uid': userid,
                           };
 
                           FirebaseFirestore.instance

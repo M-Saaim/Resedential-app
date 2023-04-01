@@ -17,6 +17,8 @@ class _RegisterState extends State<Register> {
   late String phone;
   late String house;
   late String address;
+  late String userid;
+
   // Future<String?> userdata(
   //     {required String name,
   //     required String email,
@@ -37,8 +39,9 @@ class _RegisterState extends State<Register> {
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
-    email = user.email;
-    // TODO: implement initState
+
+    userid = user.uid;
+
     super.initState();
   }
 
@@ -253,7 +256,8 @@ class _RegisterState extends State<Register> {
                               'email': email,
                               'mobile no': phone,
                               'home': house,
-                              'address': address
+                              'address': address,
+                              'user uid': userid,
                             };
 
                             FirebaseFirestore.instance

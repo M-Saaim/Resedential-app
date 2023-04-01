@@ -1,10 +1,8 @@
-// ignore_for_file: unused_import
-
 import 'package:flutter/material.dart';
+import 'package:resedentialapp/screen/admin/advoting.dart';
 import 'package:resedentialapp/screen/complaints.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/register.dart';
-import 'package:resedentialapp/screen/signin.dart';
 import 'package:resedentialapp/screen/visitors.dart';
 
 class HomePAge extends StatefulWidget {
@@ -82,7 +80,12 @@ class _HomePAgeState extends State<HomePAge> {
                           ),
                         ),
                         GestureDetector(
-                          onTap: () => {print("hii")},
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Advoting()))
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,

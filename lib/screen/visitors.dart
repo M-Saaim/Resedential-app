@@ -1,4 +1,5 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
@@ -15,6 +16,17 @@ class _VisitorsState extends State<Visitors> {
   late String visitorsphone;
   late String visitinghouse;
   late String visitingdate;
+  late String userid;
+
+  @override
+  void initState() {
+    final auth = FirebaseAuth.instance;
+    dynamic user = auth.currentUser;
+
+    userid = user.uid;
+
+    super.initState();
+  }
 
   get textStyle => const TextStyle(
         color: Colors.black,
@@ -198,6 +210,7 @@ class _VisitorsState extends State<Visitors> {
                               'Visitors mobile no': visitorsphone,
                               'Visiting home': visitinghouse,
                               'Visiting Date': visitingdate,
+                              'User uid': userid
                             };
 
                             FirebaseFirestore.instance
