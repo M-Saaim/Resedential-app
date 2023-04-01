@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/admin/advoting.dart';
 import 'package:resedentialapp/screen/complaints.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
+import 'package:resedentialapp/screen/notice.dart';
+import 'package:resedentialapp/screen/profile.dart';
 import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/visitors.dart';
 
@@ -46,7 +48,7 @@ class _HomePAgeState extends State<HomePAge> {
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                    builder: (context) => const Register()))
+                                    builder: (context) => const Profile()))
                           },
                           child: Container(
                             decoration: BoxDecoration(
@@ -122,7 +124,12 @@ class _HomePAgeState extends State<HomePAge> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          onTap: () => {print("hii")},
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Notice()))
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,

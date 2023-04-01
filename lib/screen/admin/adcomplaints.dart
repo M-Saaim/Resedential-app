@@ -4,14 +4,14 @@ import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
-class Complaints extends StatefulWidget {
-  const Complaints({Key? key}) : super(key: key);
+class Adcomplaints extends StatefulWidget {
+  const Adcomplaints({Key? key}) : super(key: key);
 
   @override
-  State<Complaints> createState() => _ComplaintsState();
+  State<Adcomplaints> createState() => _AdcomplaintsState();
 }
 
-class _ComplaintsState extends State<Complaints> {
+class _AdcomplaintsState extends State<Adcomplaints> {
   get textStyle => const TextStyle(
         color: Colors.black,
         fontSize: 20,
