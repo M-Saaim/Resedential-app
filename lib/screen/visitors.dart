@@ -1,46 +1,26 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 
-class Register extends StatefulWidget {
-  const Register({Key? key}) : super(key: key);
+class Visitors extends StatefulWidget {
+  const Visitors({Key? key}) : super(key: key);
 
   @override
-  State<Register> createState() => _RegisterState();
+  State<Visitors> createState() => _VisitorsState();
 }
 
-class _RegisterState extends State<Register> {
-  late String name;
-  late String email;
-  late String phone;
-  late String house;
-  late String address;
-  // Future<String?> userdata(
-  //     {required String name,
-  //     required String email,
-  //     required String phone,
-  //     required String house,
-  //     required String address}) async {
-  //   try {
-  //     CollectionReference users =
-  //         FirebaseFirestore.instance.collection("users");
-  //     await users.doc(email).update({"favourites": ""});
-  //     return "success";
-  //   } catch (e) {
-  //     return "error";
-  //   }
-  // }
+class _VisitorsState extends State<Visitors> {
+  late String visitorname;
+  late String visitorsphone;
+  late String visitinghouse;
+  late String visitingdate;
 
-  @override
-  void initState() {
-    final auth = FirebaseAuth.instance;
-    dynamic user = auth.currentUser;
-    email = user.email;
-    // TODO: implement initState
-    super.initState();
-  }
+  get textStyle => const TextStyle(
+        color: Colors.black,
+        fontSize: 20,
+        fontWeight: FontWeight.w600,
+      );
 
   @override
   Widget build(BuildContext context) {
@@ -55,7 +35,7 @@ class _RegisterState extends State<Register> {
                             builder: (context) => const HomePAge()));
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
-              title: const Text("Register"),
+              title: const Text("Visitors"),
               backgroundColor: const Color.fromARGB(255, 170, 37, 0),
               centerTitle: true,
             ),
@@ -73,7 +53,7 @@ class _RegisterState extends State<Register> {
                             keyboardType: TextInputType.name,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
-                              name = value;
+                              visitorname = value;
                               //Do something with the user input.
                             },
                             decoration: InputDecoration(
@@ -94,45 +74,10 @@ class _RegisterState extends State<Register> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Name',
+                              hintText: "Visitor's Name",
                               alignLabelWithHint: true,
                               label: const Icon(
-                                Icons.person,
-                                color: Color.fromARGB(255, 170, 0, 0),
-                              ),
-                            )),
-                        SizedBox(
-                          height: MediaQuery.of(context).size.height * 0.02,
-                        ),
-                        TextField(
-                            keyboardType: TextInputType.emailAddress,
-                            textAlign: TextAlign.center,
-                            onChanged: (value) {
-                              email = value;
-                              //Do something with the user input.
-                            },
-                            decoration: InputDecoration(
-                              border: InputBorder.none,
-                              hoverColor:
-                                  const Color.fromRGBO(97, 167, 238, 0.684),
-                              fillColor: Colors.black12,
-                              filled: true,
-                              enabledBorder: OutlineInputBorder(
-                                  borderSide: const BorderSide(
-                                    color: Colors.grey,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(9)),
-                              focusedBorder: OutlineInputBorder(
-                                  borderSide: BorderSide(
-                                    color: Colors.deepPurple.shade400,
-                                    width: 2.0,
-                                  ),
-                                  borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Email',
-                              alignLabelWithHint: true,
-                              label: const Icon(
-                                Icons.mail,
+                                Icons.person_4_outlined,
                                 color: Color.fromARGB(255, 170, 0, 0),
                               ),
                             )),
@@ -143,7 +88,7 @@ class _RegisterState extends State<Register> {
                             keyboardType: TextInputType.phone,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
-                              phone = value;
+                              visitorsphone = value;
                               //Do something with the user input.
                             },
                             decoration: InputDecoration(
@@ -164,10 +109,10 @@ class _RegisterState extends State<Register> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Mobile No.',
+                              hintText: 'Visitors Mobile No.',
                               alignLabelWithHint: true,
                               label: const Icon(
-                                Icons.phone,
+                                Icons.phone_enabled_outlined,
                                 color: Color.fromARGB(255, 170, 0, 0),
                               ),
                             )),
@@ -178,7 +123,7 @@ class _RegisterState extends State<Register> {
                             keyboardType: TextInputType.streetAddress,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
-                              house = value;
+                              visitinghouse = value;
                               //Do something with the user input.
                             },
                             decoration: InputDecoration(
@@ -199,10 +144,10 @@ class _RegisterState extends State<Register> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Room no/Wing',
+                              hintText: 'Visiting Room no/Wing',
                               alignLabelWithHint: true,
                               label: const Icon(
-                                Icons.house_rounded,
+                                Icons.other_houses,
                                 color: Color.fromARGB(255, 170, 0, 0),
                               ),
                               // labelText: "Email"
@@ -211,10 +156,10 @@ class _RegisterState extends State<Register> {
                           height: MediaQuery.of(context).size.height * 0.02,
                         ),
                         TextField(
-                            keyboardType: TextInputType.emailAddress,
+                            keyboardType: TextInputType.datetime,
                             textAlign: TextAlign.center,
                             onChanged: (value) {
-                              address = value;
+                              visitingdate = value;
                               //Do something with the user input.
                             },
                             decoration: InputDecoration(
@@ -235,10 +180,10 @@ class _RegisterState extends State<Register> {
                                     width: 2.0,
                                   ),
                                   borderRadius: BorderRadius.circular(9)),
-                              hintText: 'Address',
+                              hintText: 'Visiting Date',
                               alignLabelWithHint: true,
                               label: const Icon(
-                                Icons.home_filled,
+                                Icons.date_range_outlined,
                                 color: Color.fromARGB(255, 170, 0, 0),
                               ),
                               // labelText: "Email"
@@ -249,15 +194,14 @@ class _RegisterState extends State<Register> {
                         ElevatedButton(
                           onPressed: () async {
                             Map<String, String> datatoSave = {
-                              'name': name,
-                              'email': email,
-                              'mobile no': phone,
-                              'home': house,
-                              'address': address
+                              'Visitors name': visitorname,
+                              'Visitors mobile no': visitorsphone,
+                              'Visiting home': visitinghouse,
+                              'Visiting Date': visitingdate,
                             };
 
                             FirebaseFirestore.instance
-                                .collection('Users')
+                                .collection('Visitors')
                                 .add(datatoSave);
                             Navigator.push(
                                 context,
@@ -271,14 +215,27 @@ class _RegisterState extends State<Register> {
                                   const Color.fromARGB(255, 170, 0, 0),
                               shape: RoundedRectangleBorder(
                                   borderRadius: BorderRadius.circular(5.0))),
-                          child: Text(
-                            "Register",
-                            style: GoogleFonts.roboto(
-                                textStyle: const TextStyle(
-                                    color: Colors.white,
-                                    fontSize: 20,
-                                    letterSpacing: 1.3,
-                                    fontWeight: FontWeight.w800)),
+                          child: Column(
+                            children: [
+                              Text(
+                                "Enter",
+                                style: GoogleFonts.roboto(
+                                    textStyle: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        letterSpacing: 1.3,
+                                        fontWeight: FontWeight.w800)),
+                              ),
+                              Text(
+                                "Visitors",
+                                style: GoogleFonts.roboto(
+                                    textStyle: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                        letterSpacing: 1.3,
+                                        fontWeight: FontWeight.w800)),
+                              ),
+                            ],
                           ),
                         ),
                       ],

@@ -5,6 +5,7 @@ import 'package:resedentialapp/screen/complaints.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/signin.dart';
+import 'package:resedentialapp/screen/visitors.dart';
 
 class HomePAge extends StatefulWidget {
   const HomePAge({Key? key}) : super(key: key);
@@ -192,7 +193,12 @@ class _HomePAgeState extends State<HomePAge> {
                       mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                       children: [
                         GestureDetector(
-                          onTap: () => {print("hii")},
+                          onTap: () => {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                    builder: (context) => const Visitors()))
+                          },
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,

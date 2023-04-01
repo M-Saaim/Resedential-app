@@ -1,7 +1,3 @@
-// ignore_for_file: unused_import
-
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
@@ -107,14 +103,27 @@ class _ComplaintsState extends State<Complaints> {
                                 const Color.fromARGB(255, 170, 0, 0),
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10.0))),
-                        child: Text(
-                          "Register",
-                          style: GoogleFonts.roboto(
-                              textStyle: const TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 20,
-                                  letterSpacing: 1.3,
-                                  fontWeight: FontWeight.w800)),
+                        child: Column(
+                          children: [
+                            Text(
+                              "Submit",
+                              style: GoogleFonts.roboto(
+                                  textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      letterSpacing: 1.3,
+                                      fontWeight: FontWeight.w800)),
+                            ),
+                            Text(
+                              "Complaints",
+                              style: GoogleFonts.roboto(
+                                  textStyle: const TextStyle(
+                                      color: Colors.white,
+                                      fontSize: 20,
+                                      letterSpacing: 1.3,
+                                      fontWeight: FontWeight.w800)),
+                            ),
+                          ],
                         ),
                       ),
                     ])),
