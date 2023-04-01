@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/admin/addnotice.dart';
 import 'package:resedentialapp/screen/admin/adhome.dart';
 
 class Adnotice extends StatefulWidget {
@@ -58,7 +59,10 @@ class _AdnoticeState extends State<Adnotice> {
                       color: Colors.white,
                     ),
                     onPressed: () {
-                      print('Hi There');
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Addnotice()));
                     }),
               ),
             )));
