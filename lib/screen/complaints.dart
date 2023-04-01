@@ -50,42 +50,51 @@ class _ComplaintsState extends State<Complaints> {
                     color: Colors.white,
                     child: Column(children: [
                       TextField(
-                          keyboardType: TextInputType.multiline,
-                          textAlign: TextAlign.center,
-                          onChanged: (value) {
-                            complt = value;
-                            //Do something with the user input.
-                          },
-                          decoration: InputDecoration(
-                            border: InputBorder.none,
-                            hoverColor:
-                                const Color.fromRGBO(97, 167, 238, 0.684),
-                            fillColor: Colors.black12,
-                            filled: true,
-                            enabledBorder: OutlineInputBorder(
-                                borderSide: const BorderSide(
-                                  color: Colors.grey,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(9)),
-                            focusedBorder: OutlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Colors.deepPurple.shade400,
-                                  width: 2.0,
-                                ),
-                                borderRadius: BorderRadius.circular(9)),
-                            hintText: 'Complaint',
-                            alignLabelWithHint: true,
-                            label: const Icon(
-                              Icons.comment_outlined,
-                              color: Color.fromARGB(255, 170, 0, 0),
-                            ),
-                          )),
+                        keyboardType: TextInputType.multiline,
+                        textAlign: TextAlign.center,
+                        onChanged: (value) {
+                          complt = value;
+                          //Do something with the user input.
+                        },
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hoverColor: const Color.fromRGBO(97, 167, 238, 0.684),
+                          fillColor: Colors.black12,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepPurple.shade400,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          hintText: 'Complaint',
+                          alignLabelWithHint: true,
+                          label: const Icon(
+                            Icons.comment_outlined,
+                            color: Color.fromARGB(255, 170, 0, 0),
+                          ),
+                        ),
+                        maxLines: 5,
+                        minLines: 1,
+                      ),
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
                       ElevatedButton(
                         onPressed: () async {
+                          Map<String, String> datatoSave = {
+                            'complaint': complt
+                          };
+
+                          FirebaseFirestore.instance
+                              .collection('Complaints')
+                              .add(datatoSave);
                           Navigator.push(
                               context,
                               MaterialPageRoute(

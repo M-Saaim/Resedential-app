@@ -17,30 +17,30 @@ class _RegisterState extends State<Register> {
   late String phone;
   late String house;
   late String address;
-  Future<String?> userdata(
-      {required String name,
-      required String email,
-      required String phone,
-      required String house,
-      required String address}) async {
-    try {
-      CollectionReference users =
-          FirebaseFirestore.instance.collection("users");
-      await users.doc(email).update({"favourites": ""});
-      return "success";
-    } catch (e) {
-      return "error";
-    }
-  }
+  // Future<String?> userdata(
+  //     {required String name,
+  //     required String email,
+  //     required String phone,
+  //     required String house,
+  //     required String address}) async {
+  //   try {
+  //     CollectionReference users =
+  //         FirebaseFirestore.instance.collection("users");
+  //     await users.doc(email).update({"favourites": ""});
+  //     return "success";
+  //   } catch (e) {
+  //     return "error";
+  //   }
+  // }
 
-  @override
-  void initState() {
-    final auth = FirebaseAuth.instance;
-    dynamic user = auth.currentUser;
-    email = user.email;
-    // TODO: implement initState
-    super.initState();
-  }
+  // @override
+  // void initState() {
+  //   final auth = FirebaseAuth.instance;
+  //   dynamic user = auth.currentUser;
+  //   email = user.email;
+  //   // TODO: implement initState
+  //   super.initState();
+  // }
 
   @override
   Widget build(BuildContext context) {
@@ -248,6 +248,17 @@ class _RegisterState extends State<Register> {
                         ),
                         ElevatedButton(
                           onPressed: () async {
+                            Map<String, String> datatoSave = {
+                              'name': name,
+                              'email': email,
+                              'mobile no': phone,
+                              'home': house,
+                              'address': address
+                            };
+
+                            FirebaseFirestore.instance
+                                .collection('Users')
+                                .add(datatoSave);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(
