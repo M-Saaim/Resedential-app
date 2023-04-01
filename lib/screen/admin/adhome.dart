@@ -2,11 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/admin/adcomplaints.dart';
 import 'package:resedentialapp/screen/admin/adnotice.dart';
 import 'package:resedentialapp/screen/admin/advoting.dart';
-import 'package:resedentialapp/screen/complaints.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
-import 'package:resedentialapp/screen/notice.dart';
 import 'package:resedentialapp/screen/profile.dart';
-import 'package:resedentialapp/screen/register.dart';
 import 'package:resedentialapp/screen/visitors.dart';
 
 class Adhome extends StatefulWidget {
