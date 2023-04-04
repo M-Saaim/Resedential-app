@@ -1,6 +1,7 @@
 // ignore_for_file: unused_import
 
 import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
@@ -14,10 +15,13 @@ class Profile extends StatefulWidget {
 
 class _ProfileState extends State<Profile> {
   late String name;
+  late String email;
+  late String phone;
+  late String house;
+  late String address;
+  late String userid;
 
-  late String users;
-
-  // Profile(this.name);
+  late Radius topLeft;
 
   get textStyle => const TextStyle(
         color: Colors.black,
@@ -26,7 +30,38 @@ class _ProfileState extends State<Profile> {
       );
 
   @override
+  void initState() {
+    final auth = FirebaseAuth.instance;
+    // CollectionReference users = FirebaseFirestore.instance.collection("Users");
+    dynamic user = auth.currentUser;
+    // name = users.,
+    // email = user.email;
+    // phone = user.phone;
+    // house = user.house;
+    // address = user.address;
+    userid = user.uid;
+
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
+    // return StreamBuilder<DocumentSnapshot<Map<String, dynamic>>>(
+    //     stream: FirebaseFirestore.instance
+    //         .collection("Users")
+    //         .doc(email)
+    //         .snapshots(),
+    //     builder: (BuildContext context,
+    //         AsyncSnapshot<DocumentSnapshot<Map<String, dynamic>>> snapshot) {
+    //       if (!snapshot.hasData) return const Text("Loading...");
+    //       final allFav = (snapshot.data?.data()?["Users"] as List?) ?? [];
+    //       return ListView.separated(
+    //           shrinkWrap: true,
+    //           scrollDirection: Axis.vertical,
+    //           physics: const BouncingScrollPhysics(),
+    //           itemBuilder: (context, index) {});
+    //     });
+
     return MaterialApp(
         home: Scaffold(
             appBar: AppBar(
@@ -43,55 +78,88 @@ class _ProfileState extends State<Profile> {
               centerTitle: true,
             ),
             body: Builder(builder: (context) {
-              return Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                  child: Container(
-                      height: MediaQuery.of(context).size.height,
-                      width: MediaQuery.of(context).size.width,
-                      color: Colors.white,
-                      child: Column(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                              border: Border.all(width: 6),
-                              color: const Color.fromARGB(
-                                255,
-                                170,
-                                37,
-                                0,
+              return SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                physics: const BouncingScrollPhysics(),
+                child: Padding(
+                    padding:
+                        const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+                    child: Container(
+                        height: MediaQuery.of(context).size.height,
+                        width: MediaQuery.of(context).size.width,
+                        color: Colors.white,
+                        child: Column(
+                          children: [
+                            Container(
+                              decoration: BoxDecoration(
+                                border: Border.all(width: 6),
+                                color: const Color.fromARGB(
+                                  255,
+                                  170,
+                                  37,
+                                  0,
+                                ),
+                                shape: BoxShape.circle,
                               ),
-                              shape: BoxShape.circle,
+                              child: const Icon(Icons.person,
+                                  size: 200.0, color: Colors.black),
                             ),
-                            child: const Icon(Icons.person,
-                                size: 200.0, color: Colors.black),
-                          ),
-
-                          //  CollectionReference users = FirebaseFirestore.instance.collection('Users');
-
-                          //  return FutureBuilder<DocumentSnapshot>(
-
-                          //   future: students.doc(documentId).get(),
-                          //   (BuildContext context, AsyncSnapshot<DocumentSnapshot> snapshot) {
-
-                          //     //Error Handling conditions
-                          //     if (snapshot.hasError) {
-                          //       return Text("Something went wrong");
-                          //       }
-                          //     if (snapshot.hasData && !snapshot.data!.exists) {
-                          //       return Text("Document does not exist");
-                          //       }
-                          //       //Data is output to the user
-                          //       if (snapshot.connectionState == ConnectionState.done) {
-                          //         Map<String, dynamic> data = snapshot.data!.data() as Map<String, dynamic>;
-                          //         return Text("Full Name: ${data['full_name']} ${data['last_name']}");
-                          //         }
-
-                          //         return Text("loading");
-                          //         },
-                          //       );
-                        ],
-                      )));
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            TextField(
+                                keyboardType: TextInputType.name,
+                                textAlign: TextAlign.center,
+                                onChanged: (value) {
+                                  name = value;
+                                  //Do something with the user input.
+                                },
+                                decoration: InputDecoration(
+                                  border: InputBorder.none,
+                                  hoverColor:
+                                      const Color.fromRGBO(97, 167, 238, 0.684),
+                                  fillColor: Colors.black12,
+                                  filled: true,
+                                  enabledBorder: OutlineInputBorder(
+                                      borderSide: const BorderSide(
+                                        color: Colors.grey,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(9)),
+                                  focusedBorder: OutlineInputBorder(
+                                      borderSide: BorderSide(
+                                        color: Colors.deepPurple.shade400,
+                                        width: 2.0,
+                                      ),
+                                      borderRadius: BorderRadius.circular(9)),
+                                  hintText: 'Name',
+                                  alignLabelWithHint: true,
+                                  label: const Icon(
+                                    Icons.person,
+                                    color: Color.fromARGB(255, 170, 0, 0),
+                                  ),
+                                )),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.08,
+                              width: MediaQuery.of(context).size.width,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                color: const Color.fromARGB(
+                                  255,
+                                  170,
+                                  37,
+                                  0,
+                                ),
+                              ),
+                              // child: Text(userid),
+                            ),
+                          ],
+                        ))),
+              );
             })));
   }
 }

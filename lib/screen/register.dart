@@ -3,6 +3,7 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:resedentialapp/screen/signin.dart';
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -65,7 +66,7 @@ class _RegisterState extends State<Register> {
                     Navigator.push(
                         context,
                         MaterialPageRoute(
-                            builder: (context) => const HomePAge()));
+                            builder: (context) => const SignIn()));
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
               title: const Text("Register"),
@@ -117,41 +118,6 @@ class _RegisterState extends State<Register> {
                                   color: Color.fromARGB(255, 170, 0, 0),
                                 ),
                               )),
-                          // SizedBox(
-                          //   height: MediaQuery.of(context).size.height * 0.02,
-                          // ),
-                          // TextField(
-                          //     keyboardType: TextInputType.emailAddress,
-                          //     textAlign: TextAlign.center,
-                          //     onChanged: (value) {
-                          //       email = value;
-                          //       //Do something with the user input.
-                          //     },
-                          //     decoration: InputDecoration(
-                          //       border: InputBorder.none,
-                          //       hoverColor:
-                          //           const Color.fromRGBO(97, 167, 238, 0.684),
-                          //       fillColor: Colors.black12,
-                          //       filled: true,
-                          //       enabledBorder: OutlineInputBorder(
-                          //           borderSide: const BorderSide(
-                          //             color: Colors.grey,
-                          //             width: 2.0,
-                          //           ),
-                          //           borderRadius: BorderRadius.circular(9)),
-                          //       focusedBorder: OutlineInputBorder(
-                          //           borderSide: BorderSide(
-                          //             color: Colors.deepPurple.shade400,
-                          //             width: 2.0,
-                          //           ),
-                          //           borderRadius: BorderRadius.circular(9)),
-                          //       hintText: 'Email',
-                          //       alignLabelWithHint: true,
-                          //       label: const Icon(
-                          //         Icons.mail,
-                          //         color: Color.fromARGB(255, 170, 0, 0),
-                          //       ),
-                          //     )),
                           SizedBox(
                             height: MediaQuery.of(context).size.height * 0.02,
                           ),
@@ -270,20 +236,6 @@ class _RegisterState extends State<Register> {
                                   phone: phone,
                                   house: house,
                                   address: address);
-                              // Map<String, String> datatoSave = {
-                              //   'name': name,
-                              //   'email': email,
-                              //   'mobile no': phone,
-                              //   'home': house,
-                              //   'address': address,
-                              //   'user uid': userid,
-                              // };
-
-                              // FirebaseFirestore.instance
-                              //     .collection('Users')
-                              //     .doc(email)
-                              //     .set(datatoSave);
-                              // .add(datatoSave);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(
