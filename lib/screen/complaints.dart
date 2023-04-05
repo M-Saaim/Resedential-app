@@ -14,11 +14,13 @@ class Complaints extends StatefulWidget {
 class _ComplaintsState extends State<Complaints> {
   late String complt;
   late String userid;
+  late String email;
 
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
+    email = user.email;
 
     userid = user.uid;
 
@@ -107,7 +109,8 @@ class _ComplaintsState extends State<Complaints> {
 
                             FirebaseFirestore.instance
                                 .collection('Complaints')
-                                .add(datatoSave);
+                                .doc(email)
+                                .set(datatoSave);
                             Navigator.push(
                                 context,
                                 MaterialPageRoute(

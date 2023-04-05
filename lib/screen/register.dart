@@ -33,7 +33,7 @@ class _RegisterState extends State<Register> {
         {
           'name': name,
           'email': email,
-          'mobile no': phone,
+          'mobileno': phone,
           'home': house,
           'address': address,
           'user uid': userid,

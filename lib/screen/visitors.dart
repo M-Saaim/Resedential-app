@@ -16,12 +16,14 @@ class _VisitorsState extends State<Visitors> {
   late String visitorsphone;
   late String visitinghouse;
   late String visitingdate;
+  late String email;
   late String userid;
 
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
+    email = user.email;
 
     userid = user.uid;
 
@@ -218,7 +220,8 @@ class _VisitorsState extends State<Visitors> {
 
                               FirebaseFirestore.instance
                                   .collection('Visitors')
-                                  .add(datatoSave);
+                                  .doc(email)
+                                  .set(datatoSave);
                               Navigator.push(
                                   context,
                                   MaterialPageRoute(

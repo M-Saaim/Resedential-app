@@ -17,12 +17,14 @@ class Addvoter extends StatefulWidget {
 class _AddvoterState extends State<Addvoter> {
   late String votername;
   late String position;
+  late String email;
   late String userid;
 
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
+    email = user.email;
 
     userid = user.uid;
 
@@ -143,7 +145,8 @@ class _AddvoterState extends State<Addvoter> {
 
                           FirebaseFirestore.instance
                               .collection('Voting')
-                              .add(datatoSave);
+                              .doc(email)
+                              .set(datatoSave);
                           Navigator.push(
                               context,
                               MaterialPageRoute(

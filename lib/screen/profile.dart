@@ -14,12 +14,12 @@ class Profile extends StatefulWidget {
 }
 
 class _ProfileState extends State<Profile> {
-  late String name;
+  String? username;
   late String email;
-  late String phone;
-  late String house;
-  late String address;
-  late String userid;
+  String? phone;
+  String? house;
+  String? address;
+  String? userid;
 
   late Radius topLeft;
 
@@ -32,16 +32,33 @@ class _ProfileState extends State<Profile> {
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
-    // CollectionReference users = FirebaseFirestore.instance.collection("Users");
     dynamic user = auth.currentUser;
-    // name = users.,
-    // email = user.email;
-    // phone = user.phone;
-    // house = user.house;
-    // address = user.address;
+    email = user.email;
     userid = user.uid;
-
+    getdata(email);
+    print("username${phone}");
     super.initState();
+  }
+
+  Future<String?> getdata(
+    String email,
+  ) async {
+    try {
+      CollectionReference users =
+          FirebaseFirestore.instance.collection("Users");
+      final name = await users.doc(email).get();
+      // print(name['name'].toString())
+      final data = name.data() as Map<String, dynamic>;
+      username = data['name'].toString();
+      phone = data['mobileno'].toString();
+      house = data['home'].toString();
+      address = data['address'].toString();
+      setState(() {});
+      // print("username: $username");
+    } catch (e) {
+      return 'Error fetching uers';
+    }
+    return username;
   }
 
   @override
@@ -107,55 +124,207 @@ class _ProfileState extends State<Profile> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.02,
                             ),
-                            TextField(
-                                keyboardType: TextInputType.name,
-                                textAlign: TextAlign.center,
-                                onChanged: (value) {
-                                  name = value;
-                                  //Do something with the user input.
-                                },
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hoverColor:
-                                      const Color.fromRGBO(97, 167, 238, 0.684),
-                                  fillColor: Colors.black12,
-                                  filled: true,
-                                  enabledBorder: OutlineInputBorder(
-                                      borderSide: const BorderSide(
-                                        color: Colors.grey,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(9)),
-                                  focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Colors.deepPurple.shade400,
-                                        width: 2.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(9)),
-                                  hintText: 'Name',
-                                  alignLabelWithHint: true,
-                                  label: const Icon(
-                                    Icons.person,
-                                    color: Color.fromARGB(255, 170, 0, 0),
-                                  ),
-                                )),
+                            // TextField(
+                            //     keyboardType: TextInputType.name,
+                            //     textAlign: TextAlign.center,
+                            //     onChanged: (value) {
+                            //       name = value;
+                            //       //Do something with the user input.
+                            //     },
+                            //     decoration: InputDecoration(
+                            //       border: InputBorder.none,
+                            //       hoverColor:
+                            //           const Color.fromRGBO(97, 167, 238, 0.684),
+                            //       fillColor: Colors.black12,
+                            //       filled: true,
+                            //       enabledBorder: OutlineInputBorder(
+                            //           borderSide: const BorderSide(
+                            //             color: Colors.grey,
+                            //             width: 2.0,
+                            //           ),
+                            //           borderRadius: BorderRadius.circular(9)),
+                            //       focusedBorder: OutlineInputBorder(
+                            //           borderSide: BorderSide(
+                            //             color: Colors.deepPurple.shade400,
+                            //             width: 2.0,
+                            //           ),
+                            //           borderRadius: BorderRadius.circular(9)),
+                            //       hintText: 'Name',
+                            //       alignLabelWithHint: true,
+                            //       label: const Icon(
+                            //         Icons.person,
+                            //         color: Color.fromARGB(255, 170, 0, 0),
+                            //       ),
+                            //     )),
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.02,
                             ),
                             Container(
-                              height: MediaQuery.of(context).size.height * 0.08,
+                              height: MediaQuery.of(context).size.height * 0.06,
                               width: MediaQuery.of(context).size.width,
                               // ignore: prefer_const_constructors
                               decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(9),
-                                color: const Color.fromARGB(
-                                  255,
-                                  170,
-                                  37,
-                                  0,
+                                color: const Color.fromARGB(255, 161, 154, 153),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'Name: ',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      username.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
                                 ),
                               ),
-                              // child: Text(userid),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.06,
+                              width: MediaQuery.of(context).size.width,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                color: const Color.fromARGB(255, 161, 154, 153),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      "Email I'D: ",
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      email,
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.06,
+                              width: MediaQuery.of(context).size.width,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                color: const Color.fromARGB(255, 161, 154, 153),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'Mobile no: ',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      phone.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.06,
+                              width: MediaQuery.of(context).size.width,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                color: const Color.fromARGB(255, 161, 154, 153),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'House No: ',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      house.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            SizedBox(
+                              height: MediaQuery.of(context).size.height * 0.02,
+                            ),
+                            Container(
+                              height: MediaQuery.of(context).size.height * 0.06,
+                              width: MediaQuery.of(context).size.width,
+                              // ignore: prefer_const_constructors
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(9),
+                                color: const Color.fromARGB(255, 161, 154, 153),
+                              ),
+                              child: Center(
+                                child: Row(
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    const Text(
+                                      'Address: ',
+                                      style: TextStyle(
+                                        color: Colors.black,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                    Text(
+                                      address.toString(),
+                                      style: const TextStyle(
+                                        color: Colors.white,
+                                        fontSize: 20,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
                             ),
                           ],
                         ))),

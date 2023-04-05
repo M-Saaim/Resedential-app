@@ -17,11 +17,13 @@ class Addnotice extends StatefulWidget {
 class _AddnoticeState extends State<Addnotice> {
   late String notice;
   late String userid;
+  late String email;
 
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
+    email = user.email;
 
     userid = user.uid;
 
@@ -106,7 +108,8 @@ class _AddnoticeState extends State<Addnotice> {
 
                           FirebaseFirestore.instance
                               .collection('Notice')
-                              .add(datatoSave);
+                              .doc(email)
+                              .set(datatoSave);
                           Navigator.push(
                               context,
                               MaterialPageRoute(
