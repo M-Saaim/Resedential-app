@@ -32,6 +32,12 @@ class _HomePAgeState extends State<HomePAge> {
           title: const Text("Residential Mgnt."),
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
           centerTitle: true,
+          shape: const RoundedRectangleBorder(
+            borderRadius: BorderRadius.only(
+              bottomRight: Radius.circular(25),
+              bottomLeft: Radius.circular(25),
+            ),
+          ),
         ),
         body: Builder(builder: (context) {
           return Padding(

@@ -49,6 +49,11 @@ class _ComplaintsState extends State<Complaints> {
               title: const Text("Complaints"),
               backgroundColor: const Color.fromARGB(255, 170, 37, 0),
               centerTitle: true,
+              shape: const RoundedRectangleBorder(
+                borderRadius: BorderRadius.only(
+                    bottomRight: Radius.circular(25),
+                    bottomLeft: Radius.circular(25)),
+              ),
             ),
             body: Builder(builder: (context) {
               return SingleChildScrollView(
