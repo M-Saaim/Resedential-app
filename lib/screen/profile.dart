@@ -129,38 +129,6 @@ class _ProfileState extends State<Profile> {
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.02,
                             ),
-                            // TextField(
-                            //     keyboardType: TextInputType.name,
-                            //     textAlign: TextAlign.center,
-                            //     onChanged: (value) {
-                            //       name = value;
-                            //       //Do something with the user input.
-                            //     },
-                            //     decoration: InputDecoration(
-                            //       border: InputBorder.none,
-                            //       hoverColor:
-                            //           const Color.fromRGBO(97, 167, 238, 0.684),
-                            //       fillColor: Colors.black12,
-                            //       filled: true,
-                            //       enabledBorder: OutlineInputBorder(
-                            //           borderSide: const BorderSide(
-                            //             color: Colors.grey,
-                            //             width: 2.0,
-                            //           ),
-                            //           borderRadius: BorderRadius.circular(9)),
-                            //       focusedBorder: OutlineInputBorder(
-                            //           borderSide: BorderSide(
-                            //             color: Colors.deepPurple.shade400,
-                            //             width: 2.0,
-                            //           ),
-                            //           borderRadius: BorderRadius.circular(9)),
-                            //       hintText: 'Name',
-                            //       alignLabelWithHint: true,
-                            //       label: const Icon(
-                            //         Icons.person,
-                            //         color: Color.fromARGB(255, 170, 0, 0),
-                            //       ),
-                            //     )),
                             SizedBox(
                               height: MediaQuery.of(context).size.height * 0.02,
                             ),
