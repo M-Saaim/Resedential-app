@@ -94,8 +94,16 @@ class _HomePAgeState extends State<HomePAge> {
                         children: [
                           Container(
                             decoration: BoxDecoration(
-                                color: Color.fromARGB(255, 94, 92, 192),
-                                borderRadius: BorderRadius.circular(15)),
+                                color: const Color.fromARGB(255, 94, 92, 192),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: const LinearGradient(
+                                    colors: [Colors.black, Colors.white]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.94,
                             // child:const Text("Profile"),
@@ -145,8 +153,18 @@ class _HomePAgeState extends State<HomePAge> {
                             },
                             child: Container(
                               decoration: BoxDecoration(
-                                  color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  color: Colors.black,
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(colors: [
+                                    Colors.black,
+                                    Colors.greenAccent
+                                  ]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               // child:const Text("Profile"),
@@ -184,7 +202,17 @@ class _HomePAgeState extends State<HomePAge> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(colors: [
+                                    Colors.greenAccent,
+                                    Colors.black
+                                  ]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
@@ -229,7 +257,15 @@ class _HomePAgeState extends State<HomePAge> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(
+                                      colors: [Colors.black, Colors.redAccent]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
@@ -266,7 +302,15 @@ class _HomePAgeState extends State<HomePAge> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(
+                                      colors: [Colors.redAccent, Colors.black]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
@@ -311,7 +355,17 @@ class _HomePAgeState extends State<HomePAge> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(colors: [
+                                    Colors.black,
+                                    Colors.blueAccent
+                                  ]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
@@ -348,7 +402,17 @@ class _HomePAgeState extends State<HomePAge> {
                             child: Container(
                               decoration: BoxDecoration(
                                   color: Colors.red,
-                                  borderRadius: BorderRadius.circular(15)),
+                                  borderRadius: BorderRadius.circular(15),
+                                  gradient: const LinearGradient(colors: [
+                                    Colors.blueAccent,
+                                    Colors.black
+                                  ]),
+                                  boxShadow: const [
+                                    BoxShadow(
+                                        color: Colors.black,
+                                        blurRadius: 2.0,
+                                        offset: Offset(2.0, 2.0))
+                                  ]),
                               height: MediaQuery.of(context).size.height * 0.25,
                               width: MediaQuery.of(context).size.width * 0.45,
                               child: Column(
