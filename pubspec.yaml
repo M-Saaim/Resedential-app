@@ -39,6 +39,7 @@ dependencies:
   connectivity: ^3.0.6
   cloud_firestore: ^4.4.4
   firebase_storage: ^11.0.15
+  animated_text_kit: ^4.2.2
   
 
 dev_dependencies:

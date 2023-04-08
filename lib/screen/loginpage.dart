@@ -4,6 +4,14 @@ import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 import 'package:resedentialapp/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:animated_text_kit/animated_text_kit.dart';
+
+const _kTexts = ['Hello'];
+const _kTextStyle = TextStyle(
+  fontSize: 32.0,
+  fontWeight: FontWeight.bold,
+  color: Colors.blueAccent,
+);
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -17,8 +25,10 @@ class _LoginPageState extends State<LoginPage> {
 
   late String email;
   late String password;
+
   @override
   Widget build(BuildContext context) {
+    final titleTextStyle = Theme.of(context).textTheme.headlineSmall;
     return Scaffold(
       backgroundColor: Colors.white,
       body: SingleChildScrollView(
@@ -29,25 +39,43 @@ class _LoginPageState extends State<LoginPage> {
             width: MediaQuery.of(context).size.width,
             child: Column(
               children: [
-                Padding(
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
-                  child: SizedBox(
-                    height: 150,
-                    width: MediaQuery.of(context).size.width,
-                    //color: Colors.red[50],
-                    child: const CustomPaint(
-                        //painter: CurvedPainter(),
-                        ),
-                  ),
-                ),
+                // Padding(
+                //   padding:
+                //       const EdgeInsets.symmetric(vertical: 10, horizontal: 25),
+                //   child: SizedBox(
+                //     height: 150,
+                //     width: MediaQuery.of(context).size.width,
+                //     // color: Colors.red[50],
+                //     child: const CustomPaint(
+                //         //painter: CurvedPainter(),
+                //         ),
+                //   ),
+                // ),
                 Padding(
                   padding: const EdgeInsets.symmetric(
-                      horizontal: 30.0, vertical: 50),
+                      horizontal: 30.0, vertical: 20),
                   child: Column(
                     mainAxisAlignment: MainAxisAlignment.center,
                     crossAxisAlignment: CrossAxisAlignment.stretch,
                     children: <Widget>[
+                      TextLiquidFill(
+                        text: 'Residential Mgmt.',
+                        waveColor: Colors.black,
+                        boxBackgroundColor: Colors.white,
+                        textStyle: const TextStyle(
+                            fontSize: 50.0, fontWeight: FontWeight.bold),
+                        boxHeight: 200.0,
+                      ),
+                      // AnimatedTextKit(
+                      //   animatedTexts: [
+                      //     for (final txt in _kTexts)
+                      //       TypewriterAnimatedText(
+                      //         txt,
+                      //         textStyle: _kTextStyle,
+                      //         textAlign: TextAlign.start,
+                      //       )
+                      //   ],
+                      // ),
                       Text("Welcome,",
                           style: GoogleFonts.nunitoSans(
                               textStyle: const TextStyle(
