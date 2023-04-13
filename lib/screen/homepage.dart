@@ -97,7 +97,7 @@ class _HomePAgeState extends State<HomePAge> {
                                 color: const Color.fromARGB(255, 94, 92, 192),
                                 borderRadius: BorderRadius.circular(15),
                                 gradient: const LinearGradient(
-                                    colors: [Colors.black, Colors.white]),
+                                    colors: [Colors.black, Colors.white10]),
                                 boxShadow: const [
                                   BoxShadow(
                                       color: Colors.black,
@@ -155,9 +155,9 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.black,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(colors: [
-                                    Colors.black,
-                                    Colors.greenAccent
+                                  gradient: LinearGradient(colors: [
+                                    Colors.black87,
+                                    Colors.greenAccent.shade700
                                   ]),
                                   boxShadow: const [
                                     BoxShadow(
@@ -203,9 +203,9 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(colors: [
-                                    Colors.greenAccent,
-                                    Colors.black
+                                  gradient: LinearGradient(colors: [
+                                    Colors.black,
+                                    Colors.greenAccent.shade700
                                   ]),
                                   boxShadow: const [
                                     BoxShadow(
@@ -258,8 +258,10 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(
-                                      colors: [Colors.black, Colors.redAccent]),
+                                  gradient: LinearGradient(colors: [
+                                    Colors.black,
+                                    Colors.redAccent.shade700
+                                  ]),
                                   boxShadow: const [
                                     BoxShadow(
                                         color: Colors.black,
@@ -303,8 +305,10 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(
-                                      colors: [Colors.redAccent, Colors.black]),
+                                  gradient: LinearGradient(colors: [
+                                    Colors.black,
+                                    Colors.redAccent.shade700
+                                  ]),
                                   boxShadow: const [
                                     BoxShadow(
                                         color: Colors.black,
@@ -356,9 +360,9 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(colors: [
+                                  gradient: LinearGradient(colors: [
                                     Colors.black,
-                                    Colors.blueAccent
+                                    Colors.blueAccent.shade700
                                   ]),
                                   boxShadow: const [
                                     BoxShadow(
@@ -403,9 +407,9 @@ class _HomePAgeState extends State<HomePAge> {
                               decoration: BoxDecoration(
                                   color: Colors.red,
                                   borderRadius: BorderRadius.circular(15),
-                                  gradient: const LinearGradient(colors: [
-                                    Colors.blueAccent,
-                                    Colors.black
+                                  gradient: LinearGradient(colors: [
+                                    Colors.black87,
+                                    Colors.blueAccent.shade700
                                   ]),
                                   boxShadow: const [
                                     BoxShadow(

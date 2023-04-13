@@ -50,7 +50,7 @@ class _VisitorsState extends State<Visitors> {
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
               title: const Text("Visitors"),
-              backgroundColor: const Color.fromARGB(255, 61, 0, 0),
+              backgroundColor: const Color.fromARGB(255, 170, 0, 0),
               centerTitle: true,
               shape: const RoundedRectangleBorder(
                 borderRadius: BorderRadius.only(
