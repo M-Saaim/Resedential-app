@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/admin/advoting.dart';
+import 'package:resedentialapp/screen/chat.dart';
 import 'package:resedentialapp/screen/complaints.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/notice.dart';
@@ -65,6 +66,16 @@ class _HomePAgeState extends State<HomePAge> {
         backgroundColor: Colors.lightBlue[200],
         appBar: AppBar(
           title: const Text("Residential Mgnt."),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.send_outlined),
+              tooltip: 'Chat Room',
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Chat()));
+              },
+            ), //IconButton
+          ],
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
           centerTitle: true,
           shape: const RoundedRectangleBorder(
