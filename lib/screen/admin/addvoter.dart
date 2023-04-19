@@ -138,14 +138,15 @@ class _AddvoterState extends State<Addvoter> {
                       ElevatedButton(
                         onPressed: () async {
                           Map<String, String> datatoSave = {
-                            "Voter's Name": votername,
+                            'VoterName': votername,
                             'Position': position,
+                            'Votes': '0',
                             'user uid': userid,
                           };
 
                           FirebaseFirestore.instance
                               .collection('Voting')
-                              .doc(email)
+                              .doc(votername)
                               .set(datatoSave);
                           Navigator.push(
                               context,

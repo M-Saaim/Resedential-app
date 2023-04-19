@@ -18,13 +18,13 @@ class _AddnoticeState extends State<Addnotice> {
   late String notice;
   late String userid;
   late String email;
+  final now = DateTime.now();
 
   @override
   void initState() {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
     email = user.email;
-
     userid = user.uid;
 
     super.initState();
@@ -101,9 +101,10 @@ class _AddnoticeState extends State<Addnotice> {
                       ),
                       ElevatedButton(
                         onPressed: () async {
-                          Map<String, String> datatoSave = {
+                          Map<String, dynamic> datatoSave = {
                             'Notice': notice,
                             'user uid': userid,
+                            'timestamp': now,
                           };
 
                           FirebaseFirestore.instance
