@@ -24,6 +24,7 @@ class _AdhomeState extends State<Adhome> {
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
+        backgroundColor: Colors.lightBlue[200],
         appBar: AppBar(
           title: const Text("Admin-Residential Mgnt."),
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
@@ -35,7 +36,7 @@ class _AdhomeState extends State<Adhome> {
             child: Container(
                 height: MediaQuery.of(context).size.height,
                 width: MediaQuery.of(context).size.width,
-                color: Colors.white,
+                color: Colors.lightBlue[200],
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   children: [
@@ -52,7 +53,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             // child:const Text("Profile"),
@@ -90,7 +101,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Column(
@@ -132,7 +153,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Column(
@@ -169,7 +200,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Column(
@@ -211,7 +252,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Column(
@@ -248,7 +299,17 @@ class _AdhomeState extends State<Adhome> {
                           child: Container(
                             decoration: BoxDecoration(
                                 color: Colors.red,
-                                borderRadius: BorderRadius.circular(15)),
+                                borderRadius: BorderRadius.circular(15),
+                                gradient: LinearGradient(colors: [
+                                  Colors.black87,
+                                  Colors.blueAccent.shade700
+                                ]),
+                                boxShadow: const [
+                                  BoxShadow(
+                                      color: Colors.black,
+                                      blurRadius: 2.0,
+                                      offset: Offset(2.0, 2.0))
+                                ]),
                             height: MediaQuery.of(context).size.height * 0.25,
                             width: MediaQuery.of(context).size.width * 0.45,
                             child: Column(

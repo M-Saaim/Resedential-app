@@ -40,6 +40,7 @@ class _VisitorsState extends State<Visitors> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.lightBlue[200],
             appBar: AppBar(
               leading: IconButton(
                   onPressed: () {
@@ -68,7 +69,7 @@ class _VisitorsState extends State<Visitors> {
                     child: Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.white,
+                      color: Colors.lightBlue[200],
                       child: Column(
                         children: [
                           TextField(

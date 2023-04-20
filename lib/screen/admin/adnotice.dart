@@ -57,6 +57,7 @@ class _AdnoticeState extends State<Adnotice> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.lightBlue[200],
             appBar: AppBar(
               leading: IconButton(
                   onPressed: () {

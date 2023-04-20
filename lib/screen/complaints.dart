@@ -37,6 +37,7 @@ class _ComplaintsState extends State<Complaints> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.lightBlue[200],
             appBar: AppBar(
               leading: IconButton(
                   onPressed: () {
@@ -65,7 +66,7 @@ class _ComplaintsState extends State<Complaints> {
                   child: Container(
                       height: MediaQuery.of(context).size.height,
                       width: MediaQuery.of(context).size.width,
-                      color: Colors.white,
+                      color: Colors.lightBlue[200],
                       child: Column(children: [
                         TextField(
                           keyboardType: TextInputType.multiline,
@@ -76,8 +77,7 @@ class _ComplaintsState extends State<Complaints> {
                           },
                           decoration: InputDecoration(
                             border: InputBorder.none,
-                            hoverColor:
-                                const Color.fromRGBO(97, 167, 238, 0.684),
+                            hoverColor: Colors.white,
                             fillColor: Colors.black12,
                             filled: true,
                             enabledBorder: OutlineInputBorder(

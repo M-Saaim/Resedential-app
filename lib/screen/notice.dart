@@ -57,6 +57,7 @@ class _NoticeState extends State<Notice> {
   Widget build(BuildContext context) {
     return MaterialApp(
         home: Scaffold(
+            backgroundColor: Colors.lightBlue[200],
             appBar: AppBar(
               leading: IconButton(
                   onPressed: () {
@@ -85,7 +86,7 @@ class _NoticeState extends State<Notice> {
                   // ignore: prefer_const_constructors
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(9),
-                    color: const Color.fromARGB(255, 161, 154, 153),
+                    color: Colors.grey,
                   ),
                   child: Center(
                     child: Row(
@@ -95,14 +96,14 @@ class _NoticeState extends State<Notice> {
                         const Text(
                           'Notice: ',
                           style: TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
                         Text(
                           notice.toString(),
                           style: const TextStyle(
-                            color: Colors.white,
+                            color: Colors.black,
                             fontSize: 20,
                           ),
                         ),
