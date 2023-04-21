@@ -22,7 +22,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      initialRoute: "sign_in_screen",
+      initialRoute: FirebaseAuth.instance.currentUser == null
+          ? 'login_screen'
+          : 'home_screen',
       onGenerateRoute: (settings) {
         late Widget currentScreen;
         switch (settings.name) {
