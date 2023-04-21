@@ -21,7 +21,6 @@ class _ComplaintsState extends State<Complaints> {
     final auth = FirebaseAuth.instance;
     dynamic user = auth.currentUser;
     email = user.email;
-
     userid = user.uid;
 
     super.initState();
@@ -108,13 +107,13 @@ class _ComplaintsState extends State<Complaints> {
                         ElevatedButton(
                           onPressed: () async {
                             Map<String, String> datatoSave = {
-                              'complaint': complt,
+                              'complaint$email': complt,
                               'user uid': userid,
                             };
 
                             FirebaseFirestore.instance
                                 .collection('Complaints')
-                                .doc(email)
+                                .doc('cplt')
                                 .set(datatoSave);
                             Navigator.push(
                                 context,
