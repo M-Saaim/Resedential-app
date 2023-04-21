@@ -3,7 +3,6 @@ import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_polls/flutter_polls.dart';
 import 'package:resedentialapp/screen/homepage.dart';
-import 'package:resedentialapp/screen/voting.dart';
 
 late String email;
 late String userid;
