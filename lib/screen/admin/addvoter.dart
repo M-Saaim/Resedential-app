@@ -15,7 +15,8 @@ class Addvoter extends StatefulWidget {
 }
 
 class _AddvoterState extends State<Addvoter> {
-  late String votername;
+  late String votername1;
+  late String votername2;
   late String position;
   late String email;
   late String userid;
@@ -67,43 +68,6 @@ class _AddvoterState extends State<Addvoter> {
                         keyboardType: TextInputType.name,
                         textAlign: TextAlign.center,
                         onChanged: (value) {
-                          votername = value;
-                          //Do something with the user input.
-                        },
-                        decoration: InputDecoration(
-                          border: InputBorder.none,
-                          hoverColor: const Color.fromRGBO(97, 167, 238, 0.684),
-                          fillColor: Colors.black12,
-                          filled: true,
-                          enabledBorder: OutlineInputBorder(
-                              borderSide: const BorderSide(
-                                color: Colors.grey,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(9)),
-                          focusedBorder: OutlineInputBorder(
-                              borderSide: BorderSide(
-                                color: Colors.deepPurple.shade400,
-                                width: 2.0,
-                              ),
-                              borderRadius: BorderRadius.circular(9)),
-                          hintText: "Voter's Name",
-                          alignLabelWithHint: true,
-                          label: const Icon(
-                            Icons.person_add,
-                            color: Color.fromARGB(255, 170, 0, 0),
-                          ),
-                        ),
-                        maxLines: 5,
-                        minLines: 1,
-                      ),
-                      SizedBox(
-                        height: MediaQuery.of(context).size.height * 0.02,
-                      ),
-                      TextField(
-                        keyboardType: TextInputType.name,
-                        textAlign: TextAlign.center,
-                        onChanged: (value) {
                           position = value;
                           //Do something with the user input.
                         },
@@ -135,18 +99,94 @@ class _AddvoterState extends State<Addvoter> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
+                      TextField(
+                        keyboardType: TextInputType.name,
+                        textAlign: TextAlign.center,
+                        onChanged: (value) {
+                          votername1 = value;
+                          //Do something with the user input.
+                        },
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hoverColor: const Color.fromRGBO(97, 167, 238, 0.684),
+                          fillColor: Colors.black12,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepPurple.shade400,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          hintText: "Voter 1's Name",
+                          alignLabelWithHint: true,
+                          label: const Icon(
+                            Icons.person_add,
+                            color: Color.fromARGB(255, 170, 0, 0),
+                          ),
+                        ),
+                        maxLines: 5,
+                        minLines: 1,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
+                      TextField(
+                        keyboardType: TextInputType.name,
+                        textAlign: TextAlign.center,
+                        onChanged: (value) {
+                          votername2 = value;
+                          //Do something with the user input.
+                        },
+                        decoration: InputDecoration(
+                          border: InputBorder.none,
+                          hoverColor: const Color.fromRGBO(97, 167, 238, 0.684),
+                          fillColor: Colors.black12,
+                          filled: true,
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: const BorderSide(
+                                color: Colors.grey,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.deepPurple.shade400,
+                                width: 2.0,
+                              ),
+                              borderRadius: BorderRadius.circular(9)),
+                          hintText: "Voter 2's Name",
+                          alignLabelWithHint: true,
+                          label: const Icon(
+                            Icons.person_add,
+                            color: Color.fromARGB(255, 170, 0, 0),
+                          ),
+                        ),
+                        maxLines: 5,
+                        minLines: 1,
+                      ),
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       ElevatedButton(
                         onPressed: () async {
                           Map<String, String> datatoSave = {
-                            'VoterName': votername,
+                            'VoterName1': votername1,
+                            'VoterName2': votername2,
                             'Position': position,
-                            'Votes': '0',
+                            'TVotes1': '0',
+                            'TVotes2': '0',
                             'user uid': userid,
                           };
 
                           FirebaseFirestore.instance
                               .collection('Voting')
-                              .doc(votername)
+                              .doc(email)
                               .set(datatoSave);
                           Navigator.push(
                               context,
