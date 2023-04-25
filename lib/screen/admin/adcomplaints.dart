@@ -5,6 +5,14 @@ import 'package:flutter/material.dart';
 import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 
+List<String> acc = [
+  'sam@gmail.com',
+  'ns@gmail.com',
+  'gupta@gmail.com',
+  'jebastin@gmail.com',
+  'joefrance@gmail.com'
+];
+
 class Adcomplaints extends StatefulWidget {
   const Adcomplaints({Key? key}) : super(key: key);
 
@@ -16,6 +24,8 @@ class _AdcomplaintsState extends State<Adcomplaints> {
   late String email;
   late String userid;
   String? complaints;
+
+  String? mail;
 
   get textStyle => const TextStyle(
         color: Colors.black,
@@ -34,18 +44,22 @@ class _AdcomplaintsState extends State<Adcomplaints> {
     super.initState();
   }
 
-  Future<String?> getdata(
+  Future<Object?> getdata(
     String email,
   ) async {
     try {
       CollectionReference users =
           FirebaseFirestore.instance.collection("Complaints");
-      final name = await users.doc().get();
+      var ac;
+      for (ac in acc) {
+        final name = await users.doc(ac).get();
+        final data = name.data() as Map<String, dynamic>;
+        mail = ac;
+        complaints = data['complaint'];
+        print("Notice : ${complaints}");
+        setState(() {});
+      }
       // print(name['name'].toString())
-      final data = name.data() as Map<String, dynamic>;
-      complaints = data['Complaints'].toString();
-      print("Notice : ${complaints}");
-      setState(() {});
     } catch (e) {
       return 'Error fetching uers';
     }
@@ -74,7 +88,7 @@ class _AdcomplaintsState extends State<Adcomplaints> {
                 padding:
                     const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
                 child: Container(
-                  height: MediaQuery.of(context).size.height * 0.06,
+                  height: MediaQuery.of(context).size.height * 0.09,
                   width: MediaQuery.of(context).size.width,
                   // ignore: prefer_const_constructors
                   decoration: BoxDecoration(
@@ -105,6 +119,19 @@ class _AdcomplaintsState extends State<Adcomplaints> {
                   ),
                 ),
               );
-            })));
+            })
+
+            // body: ListView(
+            //   children: <Widget>[
+
+            //     ListTile(
+            //       title: Text(complaints!),
+            //     ),
+            //     ListTile(
+            //       title: Text(acc as String),
+            //     ),
+            //   ],
+            // ),
+            ));
   }
 }

@@ -4,6 +4,14 @@ import 'package:resedentialapp/screen/homepage.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 
+const acc = [
+  'sam@gmail.com',
+  'ns@gmail.com',
+  'gupta@gmail.com',
+  'jebastin@gmail.com',
+  'joefrance@gmail.com'
+];
+
 class Complaints extends StatefulWidget {
   const Complaints({Key? key}) : super(key: key);
 
@@ -107,13 +115,13 @@ class _ComplaintsState extends State<Complaints> {
                         ElevatedButton(
                           onPressed: () async {
                             Map<String, String> datatoSave = {
-                              'complaint$email': complt,
+                              'complaint': complt,
                               'user uid': userid,
                             };
 
                             FirebaseFirestore.instance
                                 .collection('Complaints')
-                                .doc('cplt')
+                                .doc(email)
                                 .set(datatoSave);
                             Navigator.push(
                                 context,

@@ -1,11 +1,15 @@
 // ignore_for_file: unused_import
 
+import 'dart:io';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:resedentialapp/screen/admin/adnotice.dart';
+import 'package:path/path.dart' as Path;
+import 'package:image_picker/image_picker.dart';
 
 class Addnotice extends StatefulWidget {
   const Addnotice({Key? key}) : super(key: key);
@@ -19,6 +23,8 @@ class _AddnoticeState extends State<Addnotice> {
   late String userid;
   late String email;
   final now = DateTime.now();
+  File? _image;
+  String? _uploadedFileURL;
 
   @override
   void initState() {
@@ -35,6 +41,28 @@ class _AddnoticeState extends State<Addnotice> {
         fontSize: 20,
         fontWeight: FontWeight.w600,
       );
+
+//   Future chooseFile() async {
+//     await ImagePicker.pickImage(source: ImageSource.gallery).then((image) {
+//     setState(() {
+//       _image = image as File?;
+//     });
+//   });
+// }
+
+//   Future uploadFile() async {
+//   StorageReference storageReference = FirebaseStorage.instance
+//       .ref()
+//       .child('notice/${Path.basename(_image!.path)}}');
+//    StorageUploadTask uploadTask = storageReference.putFile(_image);
+//    await uploadTask.onComplete;
+//    print('File Uploaded');
+//    storageReference.getDownloadURL().then((fileURL) {
+//      setState(() {
+//        _uploadedFileURL = fileURL;
+//      });
+//    });
+//  }
 
   @override
   Widget build(BuildContext context) {
@@ -99,6 +127,54 @@ class _AddnoticeState extends State<Addnotice> {
                       SizedBox(
                         height: MediaQuery.of(context).size.height * 0.02,
                       ),
+                      // Container(
+                      //   child: ButtonBar(
+                      //     children: <Widget>[
+                      //       const Text('Selected Image'),
+                      //       _image != null
+                      //           ? Image.asset(
+                      //             _image!.path,
+                      //             height: 150,
+                      //             )
+                      //           : Container(height: 150),
+                      //       _image == null
+                      //           ? RaisedButton(
+                      //             child: Text('Choose File'),
+                      //             onPressed: chooseFile,
+                      //             color: Colors.cyan,
+                      //             )
+                      //           : Container(),
+                      //       _image != null
+                      //           ? RaisedButton(
+                      //             child: Text('Upload File'),
+                      //             onPressed: uploadFile,
+                      //             color: Colors.cyan,
+                      //             )
+                      //             : Container(),
+                      //       _image != null
+                      //             ? RaisedButton(
+                      //               child: Text('Clear Selection'),
+                      //               onPressed: clearSelection,
+                      //               )
+                      //               : Container(),
+                      //       Text('Uploaded Image'),
+                      //               _uploadedFileURL != null
+                      //               ? Image.network(
+                      //                 _uploadedFileURL!,
+                      //                 height: 150,
+                      //                 )
+                      //                 : Container(),
+                      //                 ],
+                      //           ),
+                      //           // if (this._imageFile == null){const Placeholder()}
+
+                      //           // else{Image.file(this._imageFile!)}
+
+                      //           ),
+
+                      SizedBox(
+                        height: MediaQuery.of(context).size.height * 0.02,
+                      ),
                       ElevatedButton(
                         onPressed: () async {
                           Map<String, dynamic> datatoSave = {
@@ -150,4 +226,17 @@ class _AddnoticeState extends State<Addnotice> {
               );
             })));
   }
+  // Future<void> _pickImageFromGallery() async {
+  //   final pickedFile = await _picker.pickImage(source: ImageSource.gallery);
+  //   if (pickedFile != null) {
+  //     setState(() => this._imageFile = File(pickedFile.path));
+  //   }
+  // }
+
+  // Future<void> _pickImageFromCamera() async {
+  //   final pickedFile = await _picker.pickImage(source: ImageSource.camera);
+  //   if (pickedFile != null) {
+  //     setState(() => this._imageFile = File(pickedFile.path));
+  //   }
+  // }
 }
