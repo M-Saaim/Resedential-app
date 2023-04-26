@@ -6,13 +6,6 @@ import 'package:resedentialapp/screen/signin.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:animated_text_kit/animated_text_kit.dart';
 
-const _kTexts = ['Hello'];
-const _kTextStyle = TextStyle(
-  fontSize: 32.0,
-  fontWeight: FontWeight.bold,
-  color: Colors.blueAccent,
-);
-
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
 

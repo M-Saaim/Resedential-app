@@ -3,6 +3,7 @@ import 'package:resedentialapp/screen/admin/adcomplaints.dart';
 import 'package:resedentialapp/screen/admin/adnotice.dart';
 import 'package:resedentialapp/screen/admin/advisitors.dart';
 import 'package:resedentialapp/screen/admin/advoting.dart';
+import 'package:resedentialapp/screen/chat.dart';
 import 'package:resedentialapp/screen/loginpage.dart';
 import 'package:resedentialapp/screen/profile.dart';
 
@@ -27,6 +28,16 @@ class _AdhomeState extends State<Adhome> {
         backgroundColor: Colors.lightBlue[200],
         appBar: AppBar(
           title: const Text("Admin-Residential Mgnt."),
+          actions: <Widget>[
+            IconButton(
+              icon: const Icon(Icons.send_outlined),
+              tooltip: 'Chat Room',
+              onPressed: () {
+                Navigator.push(context,
+                    MaterialPageRoute(builder: (context) => const Chat()));
+              },
+            ), //IconButton
+          ],
           backgroundColor: const Color.fromARGB(255, 170, 0, 0),
           centerTitle: true,
         ),

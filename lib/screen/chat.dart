@@ -3,6 +3,7 @@ import 'package:firebase_auth/firebase_auth.dart' as firebase_auth;
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
+import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 
 class Chat extends StatefulWidget {
@@ -81,8 +82,13 @@ class _ChatState extends State<Chat> {
         leading: IconButton(
           icon: const Icon(Icons.arrow_back),
           onPressed: () {
-            Navigator.push(context,
-                MaterialPageRoute(builder: (context) => const HomePAge()));
+            if (email == 'admin@gmail.com') {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const Adhome()));
+            } else {
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => const HomePAge()));
+            }
           },
         ),
         title: SingleChildScrollView(

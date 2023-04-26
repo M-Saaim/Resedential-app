@@ -7,11 +7,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:resedentialapp/screen/admin/adhome.dart';
 
 List<String> acc = [
-  'sam@gmail.com',
-  'ns@gmail.com',
   'gupta@gmail.com',
   'jebastin@gmail.com',
-  'joefrance@gmail.com'
+  'joefrance@gmail.com',
+  'sam@gmail.com',
 ];
 
 class Advisitors extends StatefulWidget {
@@ -31,7 +30,7 @@ class _AdvisitorsState extends State<Advisitors> {
 
   get textStyle => const TextStyle(
         color: Colors.black,
-        fontSize: 20,
+        fontSize: 30,
         fontWeight: FontWeight.w600,
       );
 
@@ -53,18 +52,15 @@ class _AdvisitorsState extends State<Advisitors> {
       CollectionReference users =
           FirebaseFirestore.instance.collection("Visitors");
       var ac;
-      var i;
-      for (i = 0; i + 1;) {
-        for (ac in acc) {
-          final name = await users.doc(ac).get();
-          final data = name.data() as Map<String, dynamic>;
-          visitorname = data['Visitors name'];
-          visitorsphone = data['Visitors mobile no'];
-          visitinghouse = data['Visiting home'];
-          visitingdate = data['Visiting Date'];
-          print("VisitorName : $visitorname");
-          setState(() {});
-        }
+      for (ac in acc) {
+        final name = await users.doc(ac).get();
+        final data = name.data() as Map<String, dynamic>;
+        visitorname = data['VisitorsName'];
+        visitorsphone = data['VisitorsMobileNo'];
+        visitinghouse = data['VisitingHome'];
+        visitingdate = data['VisitingDate'];
+        print("VisitorName : $visitorname");
+        setState(() {});
       }
       // print(name['name'].toString())
     } catch (e) {
@@ -91,77 +87,114 @@ class _AdvisitorsState extends State<Advisitors> {
               centerTitle: true,
             ),
             body: Builder(builder: (context) {
-              return Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
-                child: Column(
-                  children: [
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width,
-                      // ignore: prefer_const_constructors
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9),
-                        color: const Color.fromARGB(255, 161, 154, 153),
-                      ),
-                      child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Visitors Name: ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              visitorname.toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                    SizedBox(
-                      height: MediaQuery.of(context).size.height * 0.01,
-                    ),
-                    Container(
-                      height: MediaQuery.of(context).size.height * 0.09,
-                      width: MediaQuery.of(context).size.width,
-                      // ignore: prefer_const_constructors
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(9),
-                        color: const Color.fromARGB(255, 161, 154, 153),
-                      ),
-                      child: Center(
-                        child: Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            const Text(
-                              'Visitors Phone No: ',
-                              style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                            Text(
-                              visitorsphone.toString(),
-                              style: const TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                              ),
-                            ),
-                          ],
-                        ),
-                      ),
-                    ),
-                  ],
+              return SingleChildScrollView(
+                scrollDirection: Axis.vertical,
+                child: Padding(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 5, vertical: 15),
+                  child: Column(
+                    children: [
+                      // Container(
+                      //   height: MediaQuery.of(context).size.height * 0.09,
+                      //   width: MediaQuery.of(context).size.width,
+                      //   // ignore: prefer_const_constructors
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(9),
+                      //     color: const Color.fromARGB(255, 161, 154, 153),
+                      //   ),
+                      //   child: Center(
+                      //     child: Row(
+                      //       mainAxisAlignment: MainAxisAlignment.center,
+                      //       crossAxisAlignment: CrossAxisAlignment.center,
+                      //       children: [
+                      //         const Text(
+                      //           'Visitors Name: ',
+                      //           style: TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 20,
+                      //           ),
+                      //         ),
+                      //         Text(
+                      //           visitorname.toString(),
+                      //           style: const TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 20,
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //   height: MediaQuery.of(context).size.height * 0.01,
+                      // ),
+                      // Container(
+                      //   height: MediaQuery.of(context).size.height * 0.09,
+                      //   width: MediaQuery.of(context).size.width,
+                      //   // ignore: prefer_const_constructors
+                      //   decoration: BoxDecoration(
+                      //     borderRadius: BorderRadius.circular(9),
+                      //     color: const Color.fromARGB(255, 161, 154, 153),
+                      //   ),
+                      //   child: Center(
+                      //     child: Row(
+                      //       mainAxisAlignment: MainAxisAlignment.center,
+                      //       crossAxisAlignment: CrossAxisAlignment.center,
+                      //       children: [
+                      //         const Text(
+                      //           'Visitors Phone No: ',
+                      //           style: TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 20,
+                      //           ),
+                      //         ),
+                      //         Text(
+                      //           visitorsphone.toString(),
+                      //           style: const TextStyle(
+                      //             color: Colors.white,
+                      //             fontSize: 20,
+                      //           ),
+                      //         ),
+                      //       ],
+                      //     ),
+                      //   ),
+                      // ),
+                      // SizedBox(
+                      //   height: MediaQuery.of(context).size.height * 0.01,
+                      // ),
+                      Container(
+                          height: 100,
+                          width: 500,
+                          padding: const EdgeInsets.all(15),
+                          child: Table(
+                            border: TableBorder.all(
+                                width: 1, color: Colors.black), //table border
+                            children: [
+                              const TableRow(children: [
+                                TableCell(child: Text("S/N")),
+                                TableCell(child: Text("Name")),
+                                TableCell(child: Text("Phone no.")),
+                                TableCell(child: Text("House")),
+                                TableCell(child: Text("Visiting Date")),
+                              ]),
+                              TableRow(children: [
+                                const TableCell(child: Text("1.")),
+                                TableCell(child: Text(visitorname!)),
+                                TableCell(child: Text(visitorsphone!)),
+                                TableCell(child: Text(visitinghouse!)),
+                                TableCell(child: Text(visitingdate!)),
+                              ]),
+                              const TableRow(children: [
+                                TableCell(child: Text("2.")),
+                                TableCell(child: Text("John Wick")),
+                                TableCell(child: Text("2245116589")),
+                                TableCell(child: Text("201/A")),
+                                TableCell(child: Text("1/05/2023"))
+                              ]),
+                            ],
+                          ))
+                    ],
+                  ),
                 ),
               );
             })));

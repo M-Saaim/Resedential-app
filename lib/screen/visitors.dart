@@ -217,11 +217,11 @@ class _VisitorsState extends State<Visitors> {
                           ElevatedButton(
                             onPressed: () async {
                               Map<String, String> datatoSave = {
-                                'Visitors name': visitorname,
-                                'Visitors mobile no': visitorsphone,
-                                'Visiting home': visitinghouse,
-                                'Visiting Date': visitingdate,
-                                'User uid': userid
+                                'VisitorsName': visitorname,
+                                'VisitorsMobileNo': visitorsphone,
+                                'VisitingHome': visitinghouse,
+                                'VisitingDate': visitingdate,
+                                'UserUid': userid,
                               };
 
                               FirebaseFirestore.instance

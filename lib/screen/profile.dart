@@ -4,6 +4,7 @@ import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:resedentialapp/screen/admin/adhome.dart';
 import 'package:resedentialapp/screen/homepage.dart';
 
 class Profile extends StatefulWidget {
@@ -85,10 +86,17 @@ class _ProfileState extends State<Profile> {
             appBar: AppBar(
               leading: IconButton(
                   onPressed: () {
-                    Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                            builder: (context) => const HomePAge()));
+                    if (email == 'admin@gmail.com') {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const Adhome()));
+                    } else {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const HomePAge()));
+                    }
                   },
                   icon: const Icon(Icons.arrow_back_rounded)),
               title: const Text("Profile"),
