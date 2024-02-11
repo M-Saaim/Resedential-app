@@ -35,8 +35,8 @@
    - **Property Managers:** Professionals responsible for managing multiple residential properties seeking a centralized platform to automate tasks and enhance communication with tenants.
    - **Tenants:** Residents of managed properties who benefit from convenient tools for rent payments, maintenance requests, and communication with property managers.
 
-## Getting Started
-
+## Getting Started | FLUTTER Intro
+ 
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
