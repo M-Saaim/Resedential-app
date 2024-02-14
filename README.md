@@ -8,8 +8,7 @@
    - **Property Managers:** Professionals responsible for managing multiple residential properties seeking a centralized platform to automate tasks and enhance communication with tenants.
    - **Tenants:** Residents of managed properties who benefit from convenient tools for rent payments, maintenance requests, and communication with property managers.
 
-
-|-----------------------------------------------------------------------------------------------------------------------|
+##
 
 Residential Management Application written in Flutter.
 
