@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "736445426470",
+    "firebase_url": "https://resdentialandroidapp-default-rtdb.firebaseio.com",
     "project_id": "resdentialandroidapp",
     "storage_bucket": "resdentialandroidapp.appspot.com"
   },
@@ -14,7 +15,7 @@
       },
       "oauth_client": [
         {
-          "client_id": "736445426470-9s4ja1g5rl8n37uf08v7to36vjtc04ni.apps.googleusercontent.com",
+          "client_id": "736445426470-rmldlnclsr5u8jtvpmthu47bohgfi74g.apps.googleusercontent.com",
           "client_type": 3
         }
       ],
